@@ -34,17 +34,20 @@ exchanges/
   eurex.yaml
 
 contracts/
-  futures.yaml
-  options.yaml
+  b3/
+    futures.yaml
+    options.yaml
 
 tests/
-  futures_resolve.csv
-  options_resolve.csv
+  b3/
+    futures_resolve.csv
+    options_resolve.csv
 
 schemas/
-  exchange.schema.yaml
-  contracts.schema.yaml
-  options.schema.yaml
+  contract_cycles.yaml
+  exchange_schema.yaml
+  contracts_schema.yaml
+  options_schema.yaml
 ```
 
 ---
@@ -164,7 +167,7 @@ Test cases ensure that all implementations produce identical results.
 
 Test files use CSV format for easy maintenance and universal parsing.
 
-**Futures** (`tests/futures_resolve.csv`):
+**Futures** (`tests/<exchange>/futures_resolve.csv`):
 
 Columns: `symbol,date,offset,expected,comment`
 
@@ -175,7 +178,7 @@ DOL,2026-04-02,0,DOLK26,after Apr 1 expiry rolls to May
 BGI,2026-06-01,0,BGIM26,after May expiry (May 29) front month is June
 ```
 
-**Options** (`tests/options_resolve.csv`):
+**Options** (`tests/<exchange>/options_resolve.csv`):
 
 Columns: `type,underlying,date,option_type,strike,offset,expected,comment`
 
