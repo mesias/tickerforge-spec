@@ -28,29 +28,41 @@ This guarantees **consistent behavior across languages**.
 ```
 tickerforge-spec/
 
-exchanges/
-  b3.yaml
-  cme.yaml
+VERSION
 
-contracts/
-  b3/
-    futures.yaml
-    options.yaml
-  cme/
-    futures.yaml
+spec/
+  exchanges/
+    b3.yaml
+    cme.yaml
+  contracts/
+    b3/
+      futures.yaml
+      options.yaml
+    cme/
+      futures.yaml
+  tests/
+    b3/
+      futures_resolve.csv
+      options_resolve.csv
+    cme/
+      futures_resolve.csv
+  schemas/
+    contract_cycles.yaml
+    exchange_schema.yaml
+    contracts_schema.yaml
+    options_schema.yaml
 
-tests/
-  b3/
-    futures_resolve.csv
-    options_resolve.csv
-  cme/
-    futures_resolve.csv
+packaging/
+  python/
+    pyproject.toml
+    src/tickerforge_spec_data/
+  rust/
+    Cargo.toml
+    src/lib.rs
 
-schemas/
-  contract_cycles.yaml
-  exchange_schema.yaml
-  contracts_schema.yaml
-  options_schema.yaml
+scripts/
+  sync_packaging_assets.py
+  check_versions.py
 ```
 
 ---
@@ -170,7 +182,7 @@ Test cases ensure that all implementations produce identical results.
 
 Test files use CSV format for easy maintenance and universal parsing.
 
-**Futures** (`tests/<exchange>/futures_resolve.csv`):
+**Futures** (`spec/tests/<exchange>/futures_resolve.csv`):
 
 Columns: `symbol,date,offset,expected,comment`
 
@@ -181,7 +193,7 @@ DOL,2026-04-02,0,DOLK26,after Apr 1 expiry rolls to May
 BGI,2026-06-01,0,BGIM26,after May expiry (May 29) front month is June
 ```
 
-**Options** (`tests/<exchange>/options_resolve.csv`):
+**Options** (`spec/tests/<exchange>/options_resolve.csv`):
 
 Columns: `type,underlying,date,option_type,strike,offset,expected,comment`
 
@@ -207,6 +219,24 @@ Examples:
 * tickerforge-go (Go)
 
 All implementations should rely on this specification.
+
+---
+
+# Versioning and Releases
+
+This repository uses a shared root `VERSION` file as release authority.
+
+- Tag format: `vX.Y.Z`
+- Python package (`tickerforge-spec-data`) version must match `VERSION`
+- Rust crate (`tickerforge-spec-data`) version must match `VERSION`
+
+Release sequence:
+
+1. Update `VERSION`
+2. Sync package assets (`scripts/sync_packaging_assets.py`)
+3. Verify versions (`scripts/check_versions.py`)
+4. Commit and tag `vX.Y.Z`
+5. Publish Python package to PyPI and Rust crate to crates.io from the same tag
 
 ---
 

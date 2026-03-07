@@ -12,3 +12,14 @@ Thumbs.db
 # Cursor
 .cursorignore
 .cursorindexingignore
+
+# Python packaging artifacts
+**/__pycache__/
+*.pyc
+.venv/
+packaging/python/dist/
+packaging/python/src/*.egg-info/
+
+# Rust packaging artifacts
+packaging/rust/target/
+packaging/rust/Cargo.lock

@@ -1,0 +1,14 @@
+[package]
+name = "tickerforge-spec-data"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Canonical tickerforge specification data files (YAML/CSV)."
+repository = "https://github.com/mesias/tickerforge-spec"
+homepage = "https://github.com/mesias/tickerforge-spec"
+readme = "README.md"
+include = ["src/**", "spec/**", "README.md", "LICENSE"]
+
+[lib]
+name = "tickerforge_spec_data"
+path = "src/lib.rs"

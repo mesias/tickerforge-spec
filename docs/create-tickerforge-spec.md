@@ -21,18 +21,19 @@ README.md
 LICENSE
 .gitignore
 
-exchanges/
-  b3.yaml
+spec/
+  exchanges/
+    b3.yaml
 
-contracts/
-  futures.yaml
+  contracts/
+    futures.yaml
 
-tests/
-  futures_resolve.yaml
+  tests/
+    futures_resolve.yaml
 
-schemas/
-  exchange.schema.yaml
-  contracts.schema.yaml
+  schemas/
+    exchange.schema.yaml
+    contracts.schema.yaml
 ```
 
 ## Requirements

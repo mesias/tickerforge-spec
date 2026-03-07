@@ -1,0 +1,125 @@
+options:
+
+  # ---- Equity Options ----
+
+  - type: equity
+    exchange: B3
+    description: Options on listed equities
+    option_style: american
+    ticker_format: "{root}{month_code}{strike}"
+    contract_multiplier: 1.00
+    tick_size: 0.01
+    currency: BRL
+    aliases:
+      - "opções de ações"
+      - "equity options"
+
+    call_month_codes:
+      - A   # January
+      - B   # February
+      - C   # March
+      - D   # April
+      - E   # May
+      - F   # June
+      - G   # July
+      - H   # August
+      - I   # September
+      - J   # October
+      - K   # November
+      - L   # December
+
+    put_month_codes:
+      - M   # January
+      - N   # February
+      - O   # March
+      - P   # April
+      - Q   # May
+      - R   # June
+      - S   # July
+      - T   # August
+      - U   # September
+      - V   # October
+      - W   # November
+      - X   # December
+
+    contract_cycle: monthly
+    expiration_rule: third_friday
+
+    underlyings:
+      - PETR4
+      - VALE3
+      - BBDC4
+      - ITUB4
+      - ABEV3
+      - B3SA3
+      - GGBR4
+      - HAPV3
+      - MGLU3
+      - SUZB3
+      - BOVA11
+
+  # ---- Index Options (Ibovespa) ----
+
+  - type: index
+    symbol: IBOV
+    exchange: B3
+    description: Options on Ibovespa Index
+    option_style: european
+    ticker_format: "{symbol}{month_code}{yy}{option_type}{strike}"
+    contract_multiplier: 1.00
+    tick_size: 5
+    currency: BRL
+    aliases:
+      - "opções de Ibovespa"
+      - "index options"
+
+    option_type_codes:
+      call: C
+      put: P
+
+    contract_cycle: monthly
+    expiration_rule: nearest_wednesday_15
+
+  # ---- Dollar Options ----
+
+  - type: dollar
+    symbol: DOL
+    exchange: B3
+    description: Options on U.S. Dollar
+    option_style: european
+    ticker_format: "{symbol}{month_code}{yy}{option_type}{strike}"
+    contract_multiplier: 50.00
+    tick_size: 0.50
+    currency: BRL
+    aliases:
+      - "opções de dólar"
+      - "dollar options"
+
+    option_type_codes:
+      call: C
+      put: P
+
+    contract_cycle: monthly
+    expiration_rule: first_business_day
+
+  # ---- Interest Rate Options (IDI) ----
+
+  - type: interest_rate
+    symbol: IDI
+    exchange: B3
+    description: Options on IDI (Interbank Deposit Index)
+    option_style: european
+    ticker_format: "{symbol}{month_code}{yy}{option_type}{strike}"
+    contract_multiplier: 1.00
+    tick_size: 0.01
+    currency: BRL
+    aliases:
+      - "opções de IDI"
+      - "rate options"
+
+    option_type_codes:
+      call: C
+      put: P
+
+    contract_cycle: monthly
+    expiration_rule: first_business_day

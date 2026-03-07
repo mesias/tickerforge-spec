@@ -13,9 +13,9 @@ Do not change the existing schema unless absolutely necessary.
 
 ### 1. Create a new exchange definition
 
-File: `exchanges/cme.yaml`
+File: `spec/exchanges/cme.yaml`
 
-Fields should follow the same structure used in `exchanges/b3.yaml`.
+Fields should follow the same structure used in `spec/exchanges/b3.yaml`.
 
 Exchange metadata:
 
@@ -51,7 +51,7 @@ Follow the same style used in B3.
 
 ### 3. Contracts specification
 
-Create contract definitions in: `contracts/cme/futures.yaml`
+Create contract definitions in: `spec/contracts/cme/futures.yaml`
 
 If possible reuse existing contract_cycles and expiration_rules.
 
@@ -61,13 +61,13 @@ Typical CME futures cycle: quarterly (H, M, U, Z).
 
 ### 4. If new expiration rules are needed
 
-Add them to `schemas/contract_cycles.yaml`.
+Add them to `spec/schemas/contract_cycles.yaml`.
 
 But avoid duplication if existing rules can be reused.
 
 ### 5. Tests
 
-Create basic validation tests in `tests/cme/`.
+Create basic validation tests in `spec/tests/cme/`.
 
 Tests should confirm:
 - contract cycles exist

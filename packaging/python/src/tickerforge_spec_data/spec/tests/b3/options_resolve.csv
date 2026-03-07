@@ -1,0 +1,17 @@
+type,underlying,date,option_type,strike,offset,expected,comment
+equity,PETR4,2026-01-16,call,35,0,PETRA35,January call strike 35 (expiry Jan 16)
+equity,PETR4,2026-01-16,put,35,0,PETRM35,January put strike 35 (expiry Jan 16)
+equity,PETR4,2026-06-19,call,40,0,PETRF40,June call strike 40 (expiry Jun 19)
+equity,PETR4,2026-06-19,put,40,0,PETRR40,June put strike 40 (expiry Jun 19)
+equity,VALE3,2026-03-20,call,60,0,VALEC60,March call strike 60 (expiry Mar 20)
+equity,VALE3,2026-03-20,put,60,0,VALEO60,March put strike 60 (expiry Mar 20)
+equity,PETR4,2026-01-17,call,35,0,PETRB35,after Jan expiry (Jan 16) next month is February
+equity,BBDC4,2026-12-18,put,15,0,BBDCX15,December put strike 15 (expiry Dec 18)
+index,IBOV,2026-06-01,call,130000,0,IBOVF26C130000,June call before June expiry (Jun 17)
+index,IBOV,2026-06-01,put,120000,0,IBOVF26P120000,June put before June expiry (Jun 17)
+index,IBOV,2026-06-18,call,130000,0,IBOVG26C130000,after June expiry rolls to July (all months available)
+dollar,DOL,2026-03-15,call,5200,0,DOLH26C005200,March call strike 5200 before Mar expiry
+dollar,DOL,2026-03-15,put,5000,0,DOLH26P005000,March put strike 5000 before Mar expiry
+dollar,DOL,2026-04-02,call,5200,0,DOLK26C005200,after Apr 1 expiry rolls to May
+interest_rate,IDI,2026-06-15,call,100000,0,IDIM26C100000,June call before Jul 1 expiry
+interest_rate,IDI,2026-07-02,put,99000,0,IDIQ26P099000,after Jul 1 expiry rolls to August
