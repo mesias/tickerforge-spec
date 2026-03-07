@@ -34,7 +34,7 @@ properties:
       required:
         - type
         - description
-        - trading_hours
+        - sessions
       properties:
         type:
           type: string
@@ -55,21 +55,25 @@ properties:
           description: Product category within the exchange.
         description:
           type: string
-        trading_hours:
+        sessions:
           type: object
-          required:
-            - start
-            - end
-          properties:
-            start:
-              type: string
-              description: Session start time in HH:MM format.
-              pattern: "^\\d{2}:\\d{2}$"
-            end:
-              type: string
-              description: Session end time in HH:MM format.
-              pattern: "^\\d{2}:\\d{2}$"
-          additionalProperties: false
+          description: Named trading sessions (e.g. regular, pre_market, after_market).
+          additionalProperties:
+            type: object
+            required:
+              - start
+              - end
+            properties:
+              start:
+                type: string
+                description: Session start time in HH:MM format.
+                pattern: "^\\d{2}:\\d{2}$"
+              end:
+                type: string
+                description: Session end time in HH:MM format.
+                pattern: "^\\d{2}:\\d{2}$"
+            additionalProperties: false
+          minProperties: 1
       additionalProperties: false
 
 additionalProperties: false

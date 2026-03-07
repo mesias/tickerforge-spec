@@ -7,6 +7,12 @@ options:
     description: Options on listed equities
     option_style: american
     ticker_format: "{root}{month_code}{strike}"
+    contract_multiplier: 1.00
+    tick_size: 0.01
+    currency: BRL
+    aliases:
+      - "opções de ações"
+      - "equity options"
 
     call_month_codes:
       - A   # January
@@ -60,6 +66,12 @@ options:
     description: Options on Ibovespa Index
     option_style: european
     ticker_format: "{symbol}{month_code}{yy}{option_type}{strike}"
+    contract_multiplier: 1.00
+    tick_size: 5
+    currency: BRL
+    aliases:
+      - "opções de Ibovespa"
+      - "index options"
 
     option_type_codes:
       call: C
@@ -76,6 +88,12 @@ options:
     description: Options on U.S. Dollar
     option_style: european
     ticker_format: "{symbol}{month_code}{yy}{option_type}{strike}"
+    contract_multiplier: 50.00
+    tick_size: 0.50
+    currency: BRL
+    aliases:
+      - "opções de dólar"
+      - "dollar options"
 
     option_type_codes:
       call: C
@@ -92,6 +110,12 @@ options:
     description: Options on IDI (Interbank Deposit Index)
     option_style: european
     ticker_format: "{symbol}{month_code}{yy}{option_type}{strike}"
+    contract_multiplier: 1.00
+    tick_size: 0.01
+    currency: BRL
+    aliases:
+      - "opções de IDI"
+      - "rate options"
 
     option_type_codes:
       call: C

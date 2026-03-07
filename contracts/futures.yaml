@@ -8,6 +8,12 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: b3_index
     expiration_rule: b3_index
+    contract_multiplier: 0.20
+    tick_size: 5
+    currency: BRL
+    aliases:
+      - "mini índice"
+      - "mini index"
 
   - symbol: IND
     exchange: B3
@@ -15,6 +21,12 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: b3_index
     expiration_rule: b3_index
+    contract_multiplier: 1.00
+    tick_size: 5
+    currency: BRL
+    aliases:
+      - "índice cheio"
+      - "ibovespa futures"
 
   # ---- Currency Futures ----
 
@@ -24,6 +36,12 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: monthly
     expiration_rule: first_business_day
+    contract_multiplier: 50.00
+    tick_size: 0.50
+    currency: BRL
+    aliases:
+      - "dólar cheio"
+      - "dollar futures"
 
   - symbol: WDO
     exchange: B3
@@ -31,6 +49,12 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: monthly
     expiration_rule: first_business_day
+    contract_multiplier: 10.00
+    tick_size: 0.50
+    currency: BRL
+    aliases:
+      - "mini dólar"
+      - "mini dollar"
 
   # ---- Interest Rate Futures ----
 
@@ -40,6 +64,12 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: monthly
     expiration_rule: first_business_day
+    contract_multiplier: 1.00
+    tick_size: 0.01
+    currency: BRL
+    aliases:
+      - "DI futuro"
+      - "interest rate futures"
 
   # ---- Commodity Futures ----
 
@@ -49,6 +79,12 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: monthly
     expiration_rule: last_business_day
+    contract_multiplier: 330.00
+    tick_size: 0.05
+    currency: BRL
+    aliases:
+      - "boi gordo"
+      - "live cattle"
 
   - symbol: CCM
     exchange: B3
@@ -56,6 +92,12 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: b3_corn
     expiration_rule: fixed_day_15
+    contract_multiplier: 450.00
+    tick_size: 0.01
+    currency: BRL
+    aliases:
+      - "milho"
+      - "corn futures"
 
   - symbol: ICF
     exchange: B3
@@ -63,3 +105,9 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: b3_coffee
     expiration_rule: schedule
+    contract_multiplier: 100.00
+    tick_size: 0.05
+    currency: USD
+    aliases:
+      - "café arábica"
+      - "arabica coffee"

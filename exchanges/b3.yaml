@@ -1,27 +1,29 @@
 exchange: B3
+mic: XBVM
 full_name: Brasil, Bolsa, Balcão
 country: BR
 timezone: America/Sao_Paulo
 
 assets:
-
   # --- Index Futures ---
 
   WIN:
     type: future
     category: index
     description: Mini Ibovespa Futures
-    trading_hours:
-      start: "09:00"
-      end: "18:25"
+    sessions:
+      regular:
+        start: "09:00"
+        end: "18:25"
 
   IND:
     type: future
     category: index
     description: Ibovespa Futures
-    trading_hours:
-      start: "09:00"
-      end: "18:25"
+    sessions:
+      regular:
+        start: "09:00"
+        end: "18:25"
 
   # --- Currency Futures ---
 
@@ -29,17 +31,19 @@ assets:
     type: future
     category: currency
     description: U.S. Dollar Futures
-    trading_hours:
-      start: "09:00"
-      end: "18:30"
+    sessions:
+      regular:
+        start: "09:00"
+        end: "18:30"
 
   WDO:
     type: future
     category: currency
     description: Mini U.S. Dollar Futures
-    trading_hours:
-      start: "09:00"
-      end: "18:30"
+    sessions:
+      regular:
+        start: "09:00"
+        end: "18:30"
 
   # --- Interest Rate Futures ---
 
@@ -47,9 +51,10 @@ assets:
     type: future
     category: interest_rate
     description: One-Day Interbank Deposit Rate Futures
-    trading_hours:
-      start: "09:00"
-      end: "18:15"
+    sessions:
+      regular:
+        start: "09:00"
+        end: "18:15"
 
   # --- Commodity Futures ---
 
@@ -57,25 +62,28 @@ assets:
     type: future
     category: commodity
     description: Live Cattle Futures
-    trading_hours:
-      start: "09:00"
-      end: "16:30"
+    sessions:
+      regular:
+        start: "09:00"
+        end: "16:30"
 
   CCM:
     type: future
     category: commodity
     description: Cash-Settled Corn Futures
-    trading_hours:
-      start: "09:00"
-      end: "16:20"
+    sessions:
+      regular:
+        start: "09:00"
+        end: "16:20"
 
   ICF:
     type: future
     category: commodity
     description: Arabica Coffee Futures (4/5)
-    trading_hours:
-      start: "09:00"
-      end: "16:20"
+    sessions:
+      regular:
+        start: "09:00"
+        end: "16:20"
 
   # --- Equity Options ---
 
@@ -83,9 +91,10 @@ assets:
     type: option
     category: equity_option
     description: Options on listed equities (PETR4, VALE3, BBDC4, ITUB4, etc.)
-    trading_hours:
-      start: "10:00"
-      end: "18:25"
+    sessions:
+      regular:
+        start: "10:00"
+        end: "18:25"
 
   # --- Index Options ---
 
@@ -93,9 +102,10 @@ assets:
     type: option
     category: index_option
     description: Options on Ibovespa Index
-    trading_hours:
-      start: "09:00"
-      end: "18:25"
+    sessions:
+      regular:
+        start: "09:00"
+        end: "18:25"
 
   # --- Dollar Options ---
 
@@ -103,9 +113,10 @@ assets:
     type: option
     category: dollar_option
     description: Options on U.S. Dollar
-    trading_hours:
-      start: "09:00"
-      end: "18:30"
+    sessions:
+      regular:
+        start: "09:00"
+        end: "18:30"
 
   # --- Interest Rate Options ---
 
@@ -113,6 +124,7 @@ assets:
     type: option
     category: rate_option
     description: Options on IDI (Interbank Deposit Index)
-    trading_hours:
-      start: "09:00"
-      end: "18:15"
+    sessions:
+      regular:
+        start: "09:00"
+        end: "18:15"
