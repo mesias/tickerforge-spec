@@ -1,0 +1,101 @@
+options:
+
+  # ---- Equity Options ----
+
+  - type: equity
+    exchange: B3
+    description: Options on listed equities
+    option_style: american
+    ticker_format: "{root}{month_code}{strike}"
+
+    call_month_codes:
+      - A   # January
+      - B   # February
+      - C   # March
+      - D   # April
+      - E   # May
+      - F   # June
+      - G   # July
+      - H   # August
+      - I   # September
+      - J   # October
+      - K   # November
+      - L   # December
+
+    put_month_codes:
+      - M   # January
+      - N   # February
+      - O   # March
+      - P   # April
+      - Q   # May
+      - R   # June
+      - S   # July
+      - T   # August
+      - U   # September
+      - V   # October
+      - W   # November
+      - X   # December
+
+    contract_cycle: monthly
+    expiration_rule: third_friday
+
+    underlyings:
+      - PETR4
+      - VALE3
+      - BBDC4
+      - ITUB4
+      - ABEV3
+      - B3SA3
+      - GGBR4
+      - HAPV3
+      - MGLU3
+      - SUZB3
+      - BOVA11
+
+  # ---- Index Options (Ibovespa) ----
+
+  - type: index
+    symbol: IBOV
+    exchange: B3
+    description: Options on Ibovespa Index
+    option_style: european
+    ticker_format: "{symbol}{month_code}{yy}{option_type}{strike}"
+
+    option_type_codes:
+      call: C
+      put: P
+
+    contract_cycle: monthly
+    expiration_rule: b3_index
+
+  # ---- Dollar Options ----
+
+  - type: dollar
+    symbol: DOL
+    exchange: B3
+    description: Options on U.S. Dollar
+    option_style: european
+    ticker_format: "{symbol}{month_code}{yy}{option_type}{strike}"
+
+    option_type_codes:
+      call: C
+      put: P
+
+    contract_cycle: monthly
+    expiration_rule: first_business_day
+
+  # ---- Interest Rate Options (IDI) ----
+
+  - type: interest_rate
+    symbol: IDI
+    exchange: B3
+    description: Options on IDI (Interbank Deposit Index)
+    option_style: european
+    ticker_format: "{symbol}{month_code}{yy}{option_type}{strike}"
+
+    option_type_codes:
+      call: C
+      put: P
+
+    contract_cycle: monthly
+    expiration_rule: first_business_day

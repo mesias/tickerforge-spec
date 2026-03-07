@@ -2,7 +2,7 @@
 
 **TickerForge Spec** is the canonical specification and shared dataset used by TickerForge implementations across different programming languages.
 
-The repository defines exchange metadata, contract rules, and test cases used to resolve financial asset tickers and derivatives contracts (such as futures and options).
+The repository defines exchange metadata, contract rules, and test cases used to resolve financial asset tickers and derivatives contracts (futures and options).
 
 It serves as the **source of truth** for all implementations of the TickerForge ecosystem.
 
@@ -15,7 +15,7 @@ Different languages may implement their own versions of TickerForge (Python, Rus
 This repository ensures that all implementations share:
 
 * The same exchange metadata
-* The same contract rules
+* The same contract rules (futures and options)
 * The same symbol resolution logic
 * The same validation test cases
 
@@ -38,12 +38,13 @@ contracts/
   options.yaml
 
 tests/
-  futures_resolve.yaml
-  options_resolve.yaml
+  futures_resolve.csv
+  options_resolve.csv
 
 schemas/
   exchange.schema.yaml
   contracts.schema.yaml
+  options.schema.yaml
 ```
 
 ---
@@ -54,7 +55,7 @@ Exchange files define static information such as:
 
 * timezone
 * trading hours
-* supported assets
+* supported assets and product categories
 * exchange identifiers
 
 Example:
@@ -66,33 +67,50 @@ timezone: America/Sao_Paulo
 assets:
   WIN:
     type: future
-    description: Mini Index Futures
+    category: index
+    description: Mini Ibovespa Futures
     trading_hours:
       start: "09:00"
-      end: "18:30"
+      end: "18:25"
+
+  EQUITY_OPTIONS:
+    type: option
+    category: equity_option
+    description: Options on listed equities (PETR4, VALE3, ...)
+    trading_hours:
+      start: "10:00"
+      end: "18:25"
 ```
 
 ---
 
-# Contract Rules
+# Contract Rules — Futures
 
-Contract rules describe how derivatives contracts are generated and resolved.
+Futures contract rules describe how derivatives contracts are generated and resolved.
+
+Each contract defines its cycle (which months it trades in) and an expiration rule.
+
+Supported expiration rule types:
+
+* `nearest_weekday_to_day` — closest weekday to a calendar day (e.g. WIN/IND: nearest Wednesday to the 15th)
+* `first_business_day` — first business day of the contract month (e.g. DOL, WDO, DI1)
+* `last_business_day` — last business day of the contract month (e.g. BGI)
+* `fixed_day` — specific calendar day, next business day if holiday (e.g. CCM: 15th)
+* `schedule` — dates vary per contract; see B3 maturity calendar (e.g. ICF)
 
 Example:
 
 ```yaml
-symbol: WIN
-exchange: B3
-
-contract_cycle:
-  - G
-  - J
-  - M
-  - Q
-  - V
-  - Z
-
-expiration_rule: nearest_wednesday_15
+contracts:
+  - symbol: DOL
+    exchange: B3
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle:
+      - F   # January
+      - G   # February
+      # ... all 12 months
+    expiration_rule:
+      type: first_business_day
 ```
 
 These rules allow implementations to determine:
@@ -103,25 +121,69 @@ These rules allow implementations to determine:
 
 ---
 
-# Shared Test Cases
+# Contract Rules — Options
 
-Test cases ensure that all implementations produce identical results.
+Options contract rules describe how option tickers are resolved.
+
+B3 has four categories of options, each with distinct ticker formats:
+
+**Equity options** use a compact format where one letter encodes both the option type (call/put) and the expiration month:
+
+* Calls: A (Jan) through L (Dec)
+* Puts: M (Jan) through X (Dec)
+* Ticker format: `{root}{month_code}{strike}` — e.g. `PETRA35` = Petrobras call, January, strike 35
+
+**Index, dollar, and rate options** use futures-style month codes with an explicit call/put indicator:
+
+* Ticker format: `{symbol}{month_code}{yy}{C|P}{strike}` — e.g. `DOLF26C005200`
 
 Example:
 
 ```yaml
-cases:
-  - input:
-      symbol: WIN
-      date: 2026-06-01
-      offset: 0
-    expected: WINM26
+options:
+  - type: equity
+    exchange: B3
+    option_style: american
+    ticker_format: "{root}{month_code}{strike}"
+    call_month_codes: [A, B, C, D, E, F, G, H, I, J, K, L]
+    put_month_codes: [M, N, O, P, Q, R, S, T, U, V, W, X]
+    expiration_rule:
+      type: nth_weekday
+      weekday: friday
+      nth: 3
+    underlyings:
+      - PETR4
+      - VALE3
+```
 
-  - input:
-      symbol: WIN
-      date: 2026-06-01
-      offset: 1
-    expected: WINQ26
+---
+
+# Shared Test Cases
+
+Test cases ensure that all implementations produce identical results.
+
+Test files use CSV format for easy maintenance and universal parsing.
+
+**Futures** (`tests/futures_resolve.csv`):
+
+Columns: `symbol,date,offset,expected,comment`
+
+```csv
+symbol,date,offset,expected,comment
+WIN,2026-06-01,0,WINM26,before June expiry (Jun 17) front month is June
+DOL,2026-04-02,0,DOLK26,after Apr 1 expiry rolls to May
+BGI,2026-06-01,0,BGIM26,after May expiry (May 29) front month is June
+```
+
+**Options** (`tests/options_resolve.csv`):
+
+Columns: `type,underlying,date,option_type,strike,offset,expected,comment`
+
+```csv
+type,underlying,date,option_type,strike,offset,expected,comment
+equity,PETR4,2026-01-16,call,35,0,PETRA35,January call strike 35
+equity,PETR4,2026-01-16,put,35,0,PETRM35,January put strike 35
+dollar,DOL,2026-03-15,call,5200,0,DOLH26C005200,March call strike 5200
 ```
 
 Implementations must load these tests and verify their resolver against them.
@@ -148,7 +210,7 @@ TickerForge Spec follows several principles:
 
 * **Deterministic** — no dependency on external APIs
 * **Exchange-aware** — rules are defined per exchange
-* **Language-neutral** — YAML datasets usable by any language
+* **Language-neutral** — YAML and CSV datasets usable by any language
 * **Test-driven** — shared test cases ensure consistent behavior
 
 ---

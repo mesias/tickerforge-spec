@@ -1,0 +1,97 @@
+month_codes:
+  F:
+    month: 1
+    name: January
+  G:
+    month: 2
+    name: February
+  H:
+    month: 3
+    name: March
+  J:
+    month: 4
+    name: April
+  K:
+    month: 5
+    name: May
+  M:
+    month: 6
+    name: June
+  N:
+    month: 7
+    name: July
+  Q:
+    month: 8
+    name: August
+  U:
+    month: 9
+    name: September
+  V:
+    month: 10
+    name: October
+  X:
+    month: 11
+    name: November
+  Z:
+    month: 12
+    name: December
+
+contract_cycles:
+  monthly:
+    description: Every calendar month
+    months: [F, G, H, J, K, M, N, Q, U, V, X, Z]
+
+  quarterly:
+    description: Standard quarterly futures cycle
+    months: [H, M, U, Z]
+
+  b3_index:
+    description: B3 index futures cycle (Feb, Apr, Jun, Aug, Oct, Dec)
+    months: [G, J, M, Q, V, Z]
+
+  b3_corn:
+    description: B3 corn futures cycle (Jan, Mar, May, Jul, Aug, Sep, Nov)
+    months: [F, H, K, N, Q, U, X]
+
+  b3_coffee:
+    description: B3 arabica coffee futures cycle (Mar, May, Jul, Sep, Dec)
+    months: [H, K, N, U, Z]
+
+expiration_rules:
+  b3_index:
+    description: Wednesday closest to the 15th
+    type: nearest_weekday_to_day
+    weekday: wednesday
+    day: 15
+
+  first_business_day:
+    description: First trading day of the month
+    type: first_business_day
+
+  third_friday:
+    description: Third Friday of the month (common in US options)
+
+    type: nth_weekday_of_month
+    weekday: friday
+    n: 3
+    tags:
+      - options
+      - US
+
+  last_business_day:
+    description: Last trading day of the month
+    type: last_business_day
+
+  fifth_business_day:
+    description: Fifth trading day of the month
+    type: nth_business_day
+    n: 5
+
+  fixed_day_15:
+    description: 15th calendar day of the month (next business day if holiday)
+    type: fixed_day
+    day: 15
+
+  schedule:
+    description: Dates vary per contract month; consult exchange maturity calendar
+    type: schedule

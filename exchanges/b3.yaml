@@ -1,0 +1,118 @@
+exchange: B3
+full_name: Brasil, Bolsa, Balcão
+country: BR
+timezone: America/Sao_Paulo
+
+assets:
+
+  # --- Index Futures ---
+
+  WIN:
+    type: future
+    category: index
+    description: Mini Ibovespa Futures
+    trading_hours:
+      start: "09:00"
+      end: "18:25"
+
+  IND:
+    type: future
+    category: index
+    description: Ibovespa Futures
+    trading_hours:
+      start: "09:00"
+      end: "18:25"
+
+  # --- Currency Futures ---
+
+  DOL:
+    type: future
+    category: currency
+    description: U.S. Dollar Futures
+    trading_hours:
+      start: "09:00"
+      end: "18:30"
+
+  WDO:
+    type: future
+    category: currency
+    description: Mini U.S. Dollar Futures
+    trading_hours:
+      start: "09:00"
+      end: "18:30"
+
+  # --- Interest Rate Futures ---
+
+  DI1:
+    type: future
+    category: interest_rate
+    description: One-Day Interbank Deposit Rate Futures
+    trading_hours:
+      start: "09:00"
+      end: "18:15"
+
+  # --- Commodity Futures ---
+
+  BGI:
+    type: future
+    category: commodity
+    description: Live Cattle Futures
+    trading_hours:
+      start: "09:00"
+      end: "16:30"
+
+  CCM:
+    type: future
+    category: commodity
+    description: Cash-Settled Corn Futures
+    trading_hours:
+      start: "09:00"
+      end: "16:20"
+
+  ICF:
+    type: future
+    category: commodity
+    description: Arabica Coffee Futures (4/5)
+    trading_hours:
+      start: "09:00"
+      end: "16:20"
+
+  # --- Equity Options ---
+
+  EQUITY_OPTIONS:
+    type: option
+    category: equity_option
+    description: Options on listed equities (PETR4, VALE3, BBDC4, ITUB4, etc.)
+    trading_hours:
+      start: "10:00"
+      end: "18:25"
+
+  # --- Index Options ---
+
+  IBOV_OPTIONS:
+    type: option
+    category: index_option
+    description: Options on Ibovespa Index
+    trading_hours:
+      start: "09:00"
+      end: "18:25"
+
+  # --- Dollar Options ---
+
+  DOL_OPTIONS:
+    type: option
+    category: dollar_option
+    description: Options on U.S. Dollar
+    trading_hours:
+      start: "09:00"
+      end: "18:30"
+
+  # --- Interest Rate Options ---
+
+  IDI_OPTIONS:
+    type: option
+    category: rate_option
+    description: Options on IDI (Interbank Deposit Index)
+    trading_hours:
+      start: "09:00"
+      end: "18:15"

@@ -1,0 +1,65 @@
+contracts:
+
+  # ---- Index Futures ----
+
+  - symbol: WIN
+    exchange: B3
+    description: Mini Ibovespa Futures
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle: b3_index
+    expiration_rule: b3_index
+
+  - symbol: IND
+    exchange: B3
+    description: Ibovespa Futures
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle: b3_index
+    expiration_rule: b3_index
+
+  # ---- Currency Futures ----
+
+  - symbol: DOL
+    exchange: B3
+    description: U.S. Dollar Futures
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle: monthly
+    expiration_rule: first_business_day
+
+  - symbol: WDO
+    exchange: B3
+    description: Mini U.S. Dollar Futures
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle: monthly
+    expiration_rule: first_business_day
+
+  # ---- Interest Rate Futures ----
+
+  - symbol: DI1
+    exchange: B3
+    description: One-Day Interbank Deposit Rate Futures
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle: monthly
+    expiration_rule: first_business_day
+
+  # ---- Commodity Futures ----
+
+  - symbol: BGI
+    exchange: B3
+    description: Live Cattle Futures
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle: monthly
+    expiration_rule: last_business_day
+
+  - symbol: CCM
+    exchange: B3
+    description: Cash-Settled Corn Futures
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle: b3_corn
+    expiration_rule: fixed_day_15
+
+  - symbol: ICF
+    exchange: B3
+    description: Arabica Coffee Futures (4/5)
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle: b3_coffee
+    expiration_rule: schedule
