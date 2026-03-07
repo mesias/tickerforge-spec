@@ -31,17 +31,20 @@ tickerforge-spec/
 exchanges/
   b3.yaml
   cme.yaml
-  eurex.yaml
 
 contracts/
   b3/
     futures.yaml
     options.yaml
+  cme/
+    futures.yaml
 
 tests/
   b3/
     futures_resolve.csv
     options_resolve.csv
+  cme/
+    futures_resolve.csv
 
 schemas/
   contract_cycles.yaml
@@ -99,7 +102,7 @@ Supported expiration rule types:
 * `first_business_day` — first business day of the contract month (e.g. DOL, WDO, DI1)
 * `last_business_day` — last business day of the contract month (e.g. BGI)
 * `fixed_day` — specific calendar day, next business day if holiday (e.g. CCM: 15th)
-* `schedule` — dates vary per contract; see B3 maturity calendar (e.g. ICF)
+* `schedule` — dates vary per contract; consult exchange maturity calendar (e.g. ICF, CL, GC)
 
 Example:
 

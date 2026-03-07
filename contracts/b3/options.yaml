@@ -78,7 +78,7 @@ options:
       put: P
 
     contract_cycle: monthly
-    expiration_rule: b3_index
+    expiration_rule: nearest_wednesday_15
 
   # ---- Dollar Options ----
 

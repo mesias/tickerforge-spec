@@ -6,8 +6,8 @@ contracts:
     exchange: B3
     description: Mini Ibovespa Futures
     ticker_format: "{symbol}{month_code}{yy}"
-    contract_cycle: b3_index
-    expiration_rule: b3_index
+    contract_cycle: bimonthly_even
+    expiration_rule: nearest_wednesday_15
     contract_multiplier: 0.20
     tick_size: 5
     currency: BRL
@@ -19,8 +19,8 @@ contracts:
     exchange: B3
     description: Ibovespa Futures
     ticker_format: "{symbol}{month_code}{yy}"
-    contract_cycle: b3_index
-    expiration_rule: b3_index
+    contract_cycle: bimonthly_even
+    expiration_rule: nearest_wednesday_15
     contract_multiplier: 1.00
     tick_size: 5
     currency: BRL

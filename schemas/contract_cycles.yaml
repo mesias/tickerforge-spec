@@ -45,10 +45,6 @@ contract_cycles:
     description: Standard quarterly futures cycle
     months: [H, M, U, Z]
 
-  b3_index:
-    description: B3 index futures cycle (Feb, Apr, Jun, Aug, Oct, Dec)
-    months: [G, J, M, Q, V, Z]
-
   b3_corn:
     description: B3 corn futures cycle (Jan, Mar, May, Jul, Aug, Sep, Nov)
     months: [F, H, K, N, Q, U, X]
@@ -57,8 +53,12 @@ contract_cycles:
     description: B3 arabica coffee futures cycle (Mar, May, Jul, Sep, Dec)
     months: [H, K, N, U, Z]
 
+  bimonthly_even:
+    description: Even-month cycle (Feb, Apr, Jun, Aug, Oct, Dec)
+    months: [G, J, M, Q, V, Z]
+
 expiration_rules:
-  b3_index:
+  nearest_wednesday_15:
     description: Wednesday closest to the 15th
     type: nearest_weekday_to_day
     weekday: wednesday

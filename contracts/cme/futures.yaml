@@ -1,0 +1,126 @@
+contracts:
+
+  # ---- Index Futures ----
+
+  - symbol: ES
+    exchange: CME
+    description: E-mini S&P 500 Futures
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle: quarterly
+    expiration_rule: third_friday
+    contract_multiplier: 50.00
+    tick_size: 0.25
+    currency: USD
+    aliases:
+      - "e-mini s&p"
+      - "s&p 500 futures"
+
+  - symbol: NQ
+    exchange: CME
+    description: E-mini Nasdaq-100 Futures
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle: quarterly
+    expiration_rule: third_friday
+    contract_multiplier: 20.00
+    tick_size: 0.25
+    currency: USD
+    aliases:
+      - "e-mini nasdaq"
+      - "nasdaq 100 futures"
+
+  - symbol: RTY
+    exchange: CME
+    description: E-mini Russell 2000 Futures
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle: quarterly
+    expiration_rule: third_friday
+    contract_multiplier: 50.00
+    tick_size: 0.10
+    currency: USD
+    aliases:
+      - "e-mini russell"
+      - "russell 2000 futures"
+
+  # ---- Interest Rate Futures ----
+
+  - symbol: ZN
+    exchange: CME
+    description: 10-Year Treasury Note Futures
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle: quarterly
+    expiration_rule: schedule
+    contract_multiplier: 1000.00
+    tick_size: 0.015625
+    currency: USD
+    aliases:
+      - "10-year t-note"
+      - "ten year treasury"
+
+  - symbol: ZF
+    exchange: CME
+    description: 5-Year Treasury Note Futures
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle: quarterly
+    expiration_rule: schedule
+    contract_multiplier: 1000.00
+    tick_size: 0.0078125
+    currency: USD
+    aliases:
+      - "5-year t-note"
+      - "five year treasury"
+
+  # ---- Commodity Futures ----
+
+  - symbol: CL
+    exchange: CME
+    description: Crude Oil Futures (WTI)
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle: monthly
+    expiration_rule: schedule
+    contract_multiplier: 1000.00
+    tick_size: 0.01
+    currency: USD
+    aliases:
+      - "crude oil"
+      - "wti"
+
+  - symbol: GC
+    exchange: CME
+    description: Gold Futures
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle: bimonthly_even
+    expiration_rule: schedule
+    contract_multiplier: 100.00
+    tick_size: 0.10
+    currency: USD
+    aliases:
+      - "gold"
+      - "comex gold"
+
+  # ---- Currency Futures ----
+
+  - symbol: 6E
+    exchange: CME
+    description: Euro FX Futures
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle: quarterly
+    expiration_rule: schedule
+    contract_multiplier: 125000.00
+    tick_size: 0.00005
+    currency: USD
+    aliases:
+      - "euro fx"
+      - "eur/usd futures"
+
+  - symbol: 6J
+    exchange: CME
+    description: Japanese Yen Futures
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle: quarterly
+    expiration_rule: schedule
+    contract_multiplier: 12500000.00
+    tick_size: 0.0000005
+    currency: USD
+    aliases:
+      - "japanese yen"
+      - "jpy futures"
