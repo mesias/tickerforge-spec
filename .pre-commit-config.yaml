@@ -1,6 +1,3 @@
-# Canonical spec lives under spec/ and .github/; packaging/* copies are synced via scripts.
-exclude: ^packaging/
-
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0

@@ -16,11 +16,11 @@ def main() -> int:
     root = Path(__file__).resolve().parents[1]
     canonical = (root / "VERSION").read_text(encoding="utf-8").strip()
 
-    python_toml = (root / "packaging" / "python" / "pyproject.toml").read_text(encoding="utf-8")
-    python_version = extract(r'^version\s*=\s*"([^"]+)"', python_toml, "packaging/python/pyproject.toml")
+    python_toml = (root / "pyproject.toml").read_text(encoding="utf-8")
+    python_version = extract(r'^version\s*=\s*"([^"]+)"', python_toml, "pyproject.toml")
 
-    cargo_toml = (root / "packaging" / "rust" / "Cargo.toml").read_text(encoding="utf-8")
-    rust_version = extract(r'^version\s*=\s*"([^"]+)"', cargo_toml, "packaging/rust/Cargo.toml")
+    cargo_toml = (root / "rust" / "Cargo.toml").read_text(encoding="utf-8")
+    rust_version = extract(r'^version\s*=\s*"([^"]+)"', cargo_toml, "rust/Cargo.toml")
 
     versions = {
         "VERSION": canonical,

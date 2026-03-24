@@ -17,9 +17,9 @@ Thumbs.db
 **/__pycache__/
 *.pyc
 .venv/
-packaging/python/dist/
-packaging/python/src/*.egg-info/
+dist/
+*.egg-info/
 
-# Rust packaging artifacts
-packaging/rust/target/
-packaging/rust/Cargo.lock
+# Rust
+rust/target/
+rust/Cargo.lock

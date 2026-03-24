@@ -1,37 +1,29 @@
 # Release Process
 
-This repository publishes two artifacts from the same canonical spec source:
+This repository publishes the **PyPI** package `tickerforge-spec-data`. The canonical spec files live only under the repository root `spec/`; the wheel bundles them via Hatch (`force-include`) at build time—no second checked-in copy.
 
-- PyPI package: `tickerforge-spec-data`
-- crates.io crate: `tickerforge-spec-data`
-
-Both must always match the root `VERSION`.
+The root `VERSION` file is the release authority.
 
 ## Prerequisites
 
 - `spec/` is up to date
-- packaging assets are synced into:
-  - `packaging/python/src/tickerforge_spec_data/spec`
-  - `packaging/rust/spec`
+- `pyproject.toml` and `rust/Cargo.toml` versions match `VERSION` (`python scripts/check_versions.py`)
 
 ## Steps
 
 1. Update root `VERSION` (semantic versioning).
-2. Update package manifests:
-   - `packaging/python/pyproject.toml`
-   - `packaging/rust/Cargo.toml`
-3. Sync packaged assets:
-   - `python scripts/sync_packaging_assets.py`
-4. Run validation:
-   - `python scripts/check_versions.py`
-   - `python scripts/sync_packaging_assets.py --check`
-5. Commit changes.
-6. Create release tag:
+2. Bump `version` in `pyproject.toml` and `rust/Cargo.toml` to match.
+3. Run `python scripts/check_versions.py`.
+4. Commit changes.
+5. Create release tag:
    - `git tag vX.Y.Z`
    - `git push origin vX.Y.Z`
-7. GitHub Actions `release.yml` publishes to PyPI and crates.io.
+6. GitHub Actions `release.yml` builds with `python -m build` and publishes `dist/` to PyPI.
+
+## Rust crate
+
+The `rust/` crate exists for `cargo check` in CI and points at `../spec` in a monorepo checkout. It is not published to crates.io (`publish = false`) until an embedding or packaging strategy for crates.io is defined.
 
 ## Notes
 
-- If only packaging changes, keep `VERSION` aligned and still tag a release.
-- If spec data changes, always sync assets before release.
+- If only packaging metadata changes, keep `VERSION` aligned and still tag a release when publishing to PyPI.

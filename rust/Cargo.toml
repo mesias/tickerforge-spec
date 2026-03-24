@@ -1,0 +1,11 @@
+[package]
+name = "tickerforge-spec-data"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/mesias/tickerforge-spec"
+description = "TickerForge spec helpers; canonical data lives in ../spec in this repository."
+publish = false
+
+[lib]
+path = "src/lib.rs"
