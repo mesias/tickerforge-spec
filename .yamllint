@@ -1,0 +1,11 @@
+extends: default
+
+yaml-files:
+  - "*.yaml"
+  - "*.yml"
+
+rules:
+  document-start: disable
+  line-length: disable
+  truthy:
+    check-keys: false
