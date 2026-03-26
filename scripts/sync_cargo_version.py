@@ -27,6 +27,9 @@ def main() -> int:
         print("Could not find a single [package] version line in Cargo.toml", file=sys.stderr)
         return 1
 
+    if new_text == text:
+        return 0
+
     cargo_path.write_text(new_text, encoding="utf-8")
     print(f"Cargo.toml version set to {version} (from VERSION)")
     return 0

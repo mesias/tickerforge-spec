@@ -1,4 +1,12 @@
 repos:
+  - repo: local
+    hooks:
+      - id: sync-cargo-version
+        name: sync root Cargo.toml version from VERSION
+        entry: python3 scripts/sync_cargo_version.py
+        language: system
+        pass_filenames: false
+        always_run: true
   - repo: https://github.com/google/yamlfmt
     rev: v0.21.0
     hooks:

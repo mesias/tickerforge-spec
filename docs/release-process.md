@@ -14,15 +14,15 @@ The root `VERSION` file is the release authority.
 ## Prerequisites
 
 - `spec/` is up to date
-- Root `VERSION` is the only version you edit; Python reads it via Hatch (`dynamic = ["version"]`). Root `Cargo.toml` must match `VERSION` (`python scripts/check_versions.py`; run `python scripts/sync_cargo_version.py` after changing `VERSION`). The `rust/` manifest is CI-only (`publish = false`) and its `version` is not part of this check.
+- Root `VERSION` is the only version you edit; Python reads it via Hatch (`dynamic = ["version"]`). Root `Cargo.toml` must match `VERSION` (`python scripts/check_versions.py`). If you use **pre-commit**, the **`sync-cargo-version`** hook runs on every commit and updates `Cargo.toml` from `VERSION`; otherwise run `python scripts/sync_cargo_version.py` after changing `VERSION`. The `rust/` manifest is CI-only (`publish = false`) and its `version` is not part of this check.
 - GitHub **Environments**: `release`; repository (or environment) secret **`PYPI_API_TOKEN`** for PyPI, and **`CRATES_IO_TOKEN`** for crates.io
 
 ## Steps
 
 1. Update root `VERSION` (semantic versioning).
-2. Run `python scripts/sync_cargo_version.py` so root `Cargo.toml` matches (Cargo cannot read `VERSION` directly).
+2. Ensure root `Cargo.toml` matches: use **pre-commit** on commit, or run `python scripts/sync_cargo_version.py` manually (Cargo cannot read `VERSION` directly).
 3. Run `python scripts/check_versions.py`.
-4. Commit changes.
+4. Commit changes (stage updated `Cargo.toml` too if pre-commit modified it).
 5. Create release tag:
    - `git tag vX.Y.Z` (must match `VERSION`, e.g. `VERSION` `1.2.3` → tag `v1.2.3`)
    - `git push origin vX.Y.Z`
