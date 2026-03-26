@@ -19,13 +19,17 @@ def main() -> int:
     python_toml = (root / "pyproject.toml").read_text(encoding="utf-8")
     python_version = extract(r'^version\s*=\s*"([^"]+)"', python_toml, "pyproject.toml")
 
+    cargo_root = (root / "Cargo.toml").read_text(encoding="utf-8")
+    cargo_root_version = extract(r'^version\s*=\s*"([^"]+)"', cargo_root, "Cargo.toml")
+
     cargo_toml = (root / "rust" / "Cargo.toml").read_text(encoding="utf-8")
     rust_version = extract(r'^version\s*=\s*"([^"]+)"', cargo_toml, "rust/Cargo.toml")
 
     versions = {
         "VERSION": canonical,
         "python": python_version,
-        "rust": rust_version,
+        "Cargo.toml": cargo_root_version,
+        "rust/Cargo.toml": rust_version,
     }
     if len(set(versions.values())) != 1:
         print("Version mismatch detected:")
