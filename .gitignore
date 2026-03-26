@@ -20,6 +20,8 @@ Thumbs.db
 dist/
 *.egg-info/
 
-# Rust
+# Rust (crate at repo root; also legacy rust/ subfolder if used)
+/target/
+Cargo.lock
 rust/target/
 rust/Cargo.lock
