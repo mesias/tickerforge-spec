@@ -1,0 +1,20 @@
+exchange: CME
+timezone: America/Chicago
+
+holidays:
+  fixed:
+    - { month: 1, day: 1, name: "New Year's Day" }
+    - { month: 7, day: 4, name: "Independence Day" }
+    - { month: 12, day: 25, name: "Christmas Day" }
+
+  nth_weekday:
+    - { month: 1, weekday: monday, nth: 3, name: "Martin Luther King Jr. Day" }
+    - { month: 2, weekday: monday, nth: 3, name: "Presidents' Day" }
+    - { month: 9, weekday: monday, nth: 1, name: "Labor Day" }
+    - { month: 11, weekday: thursday, nth: 4, name: "Thanksgiving Day" }
+
+  last_weekday:
+    - { month: 5, weekday: monday, name: "Memorial Day" }
+
+  easter_offset:
+    - { offset: -2, name: "Good Friday" }

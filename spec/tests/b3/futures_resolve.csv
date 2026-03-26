@@ -8,21 +8,22 @@ WIN,2026-12-17,0,WING27,after December expiry rolls to Feb next year
 IND,2026-06-01,0,INDM26,same cycle/rules as WIN
 IND,2026-06-18,0,INDQ26,after June expiry rolls to August
 IND,2026-12-17,0,INDG27,after December expiry rolls to Feb next year
-DOL,2026-03-15,0,DOLH26,before Mar expiry (Apr 1) front month is March
-DOL,2026-04-01,0,DOLJ26,on Apr 1 (expiry day for Mar contract) front month is April
+DOL,2026-02-27,0,DOLH26,before Mar expiry (Mar 2) front month is March
+DOL,2026-03-02,0,DOLJ26,on Mar 2 (expiry day for Mar contract) rolls to April
 DOL,2026-04-02,0,DOLK26,after Apr 1 expiry rolls to May
 DOL,2026-12-30,0,DOLF27,near year end front month is Jan next year
-WDO,2026-03-15,0,WDOH26,same rules as DOL
+WDO,2026-02-27,0,WDOH26,same rules as DOL
 WDO,2026-04-02,0,WDOK26,after Apr 1 expiry rolls to May
-DI1,2026-06-15,0,DI1M26,before Jul 1 expiry front month is June
-DI1,2026-07-01,0,DI1N26,on Jul 1 (expiry day for Jun) front month is July
+DI1,2026-06-01,0,DI1M26,on Jun 1 (expiry day for Jun) still tradeable
+DI1,2026-06-02,0,DI1N26,after Jun 1 expiry rolls to July
+DI1,2026-07-01,0,DI1N26,on Jul 1 (expiry day for Jul) front month is July
 DI1,2026-07-02,0,DI1Q26,after Jul 1 expiry rolls to August
 DI1,2026-12-30,0,DI1F27,near year end front month is Jan next year
 BGI,2026-05-15,0,BGIK26,before May last business day front month is May
 BGI,2026-06-01,0,BGIM26,after May expiry (May 29) front month is June
 BGI,2026-12-31,0,BGIF27,after Dec expiry rolls to Jan next year
 CCM,2026-02-10,0,CCMH26,between Jan and Mar contract front month is March
-CCM,2026-03-16,0,CCMK26,after Mar 15 expiry rolls to May
+CCM,2026-03-17,0,CCMK26,after Mar 16 expiry (15th was Sunday) rolls to May
 CCM,2026-07-14,0,CCMN26,before Jul 15 expiry front month is July
 CCM,2026-07-16,0,CCMQ26,after Jul 15 expiry rolls to August
 ICF,2026-03-20,0,ICFH26,before Mar expiry front month is March

@@ -1,0 +1,194 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: Exchange Schedule
+description: >
+  Rule-based holiday and early-close definitions for an exchange.
+  Implementations evaluate these rules at runtime to compute the set
+  of trading sessions for any year.
+
+type: object
+required:
+  - exchange
+  - timezone
+  - holidays
+
+properties:
+  exchange:
+    type: string
+    description: Short exchange identifier (e.g. B3, CME).
+
+  timezone:
+    type: string
+    description: IANA timezone identifier (e.g. America/Sao_Paulo).
+
+  holidays:
+    type: object
+    description: Rule groups that define non-trading dates.
+    properties:
+      fixed:
+        type: array
+        description: Holidays that fall on the same month/day every year.
+        items:
+          type: object
+          required: [month, day, name]
+          properties:
+            month:
+              type: integer
+              minimum: 1
+              maximum: 12
+            day:
+              type: integer
+              minimum: 1
+              maximum: 31
+            name:
+              type: string
+            from_year:
+              type: integer
+              description: First year this rule applies (inclusive).
+            to_year:
+              type: integer
+              description: Last year this rule applies (inclusive).
+          additionalProperties: false
+
+      easter_offset:
+        type: array
+        description: Holidays defined as a day offset from Easter Sunday.
+        items:
+          type: object
+          required: [offset, name]
+          properties:
+            offset:
+              type: integer
+              description: >
+                Signed number of days relative to Easter Sunday.
+                Negative = before Easter, positive = after Easter.
+            name:
+              type: string
+            from_year:
+              type: integer
+            to_year:
+              type: integer
+          additionalProperties: false
+
+      nth_weekday:
+        type: array
+        description: Holidays defined as the Nth occurrence of a weekday in a month.
+        items:
+          type: object
+          required: [month, weekday, nth, name]
+          properties:
+            month:
+              type: integer
+              minimum: 1
+              maximum: 12
+            weekday:
+              type: string
+              enum: [monday, tuesday, wednesday, thursday, friday]
+            nth:
+              type: integer
+              minimum: 1
+              maximum: 5
+            name:
+              type: string
+            from_year:
+              type: integer
+            to_year:
+              type: integer
+          additionalProperties: false
+
+      last_weekday:
+        type: array
+        description: Holidays defined as the last occurrence of a weekday in a month.
+        items:
+          type: object
+          required: [month, weekday, name]
+          properties:
+            month:
+              type: integer
+              minimum: 1
+              maximum: 12
+            weekday:
+              type: string
+              enum: [monday, tuesday, wednesday, thursday, friday]
+            name:
+              type: string
+            from_year:
+              type: integer
+            to_year:
+              type: integer
+          additionalProperties: false
+
+      overrides:
+        type: array
+        description: >
+          Per-date additions or removals that cannot be expressed as rules
+          (e.g. emergency closures, one-off exceptions).
+        items:
+          type: object
+          required: [date, action]
+          properties:
+            date:
+              type: string
+              pattern: "^\\d{4}-\\d{2}-\\d{2}$"
+            action:
+              type: string
+              enum: [add, remove]
+              description: >
+                "add" inserts the date as a holiday.
+                "remove" deletes it from the computed set.
+            name:
+              type: string
+          additionalProperties: false
+    additionalProperties: false
+
+  early_closes:
+    type: object
+    description: >
+      Rule groups for half-day sessions. These dates ARE trading sessions
+      but with modified hours.
+    properties:
+      fixed:
+        type: array
+        items:
+          type: object
+          required: [month, day, name, open]
+          properties:
+            month:
+              type: integer
+              minimum: 1
+              maximum: 12
+            day:
+              type: integer
+              minimum: 1
+              maximum: 31
+            name:
+              type: string
+            open:
+              type: string
+              pattern: "^\\d{2}:\\d{2}$"
+            from_year:
+              type: integer
+            to_year:
+              type: integer
+          additionalProperties: false
+
+      easter_offset:
+        type: array
+        items:
+          type: object
+          required: [offset, name, open]
+          properties:
+            offset:
+              type: integer
+            name:
+              type: string
+            open:
+              type: string
+              pattern: "^\\d{2}:\\d{2}$"
+            from_year:
+              type: integer
+            to_year:
+              type: integer
+          additionalProperties: false
+    additionalProperties: false
+
+additionalProperties: false
