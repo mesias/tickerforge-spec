@@ -15,7 +15,7 @@ The root `VERSION` file is the release authority.
 
 - `spec/` is up to date
 - `VERSION`, `pyproject.toml`, root `Cargo.toml`, and `rust/Cargo.toml` versions all match (`python scripts/check_versions.py`)
-- GitHub **Environments**: `release` with PyPI trusted publishing (OIDC) and a **`CRATES_IO_TOKEN`** secret for crates.io
+- GitHub **Environments**: `release`; repository (or environment) secret **`PYPI_API_TOKEN`** for PyPI, and **`CRATES_IO_TOKEN`** for crates.io
 
 ## Steps
 
