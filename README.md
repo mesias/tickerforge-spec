@@ -232,11 +232,12 @@ This repository uses a shared root `VERSION` file as release authority.
 
 - Tag format: `vX.Y.Z`
 - Python package (`tickerforge-spec-data` in root `pyproject.toml`) version must match `VERSION`
-- Rust crate under `rust/` uses the same version for local checks; it is marked `publish = false` (crates.io needs a different layout than `../spec`)
+- Root `Cargo.toml` (published Rust crate) must match `VERSION`
+- The `rust/` subdirectory crate is `publish = false` (CI/local `cargo check` only); its `version` is not kept in sync with releases
 
 Release sequence:
 
-1. Update `VERSION` and the `version` field in `pyproject.toml` and `rust/Cargo.toml`
+1. Update `VERSION` and the `version` field in `pyproject.toml` and root `Cargo.toml`
 2. Run `python scripts/check_versions.py`
 3. Commit and tag `vX.Y.Z`
 4. GitHub Actions `release.yml` publishes the Python wheel/sdist to PyPI (spec files are bundled at build time; there is no duplicate `spec/` copy in git)
