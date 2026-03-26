@@ -1,19 +1,21 @@
-# Rule-Based Exchange Schedule Spec
+# Rule-Based Exchange Schedule Specification
 
 ## Problem
 
-Both implementations delegate session detection to third-party backends (`exchange_calendars` BVMF in Python, `bdays` BrazilExchange in Rust). These backends:
+Third-party calendar libraries are useful, but they are not the specification:
 
-- Disagree with each other on edge-case holidays (Dec 24/31, Black Consciousness Day, Corpus Christi)
-- Cannot represent half-day sessions (Ash Wednesday opens at 13:00)
-- Are version-pinned: a library upgrade can silently change which days are sessions
-- Force FX futures (DOL, WDO, DI1) to be excluded from Rust tests due to calendar mismatches
+- They can disagree on edge-case holidays and special sessions.
+- They may not model half-day or delayed-open sessions.
+- Upgrading a dependency can silently change session behavior.
+- They make cross-language parity harder to guarantee.
 
-The `sessions` field in `exchanges/*.yaml` is parsed but never used for logic.
+The canonical source of truth belongs in `tickerforge-spec`, not in language-specific calendar backends.
 
-## Design: Rules, Not Dates
+## Design
 
-B3 holidays follow a small set of **repeating patterns**. Instead of listing every date for every year, the spec defines **rules** that both implementations evaluate at runtime:
+Instead of storing one date list per year, the spec stores a small set of recurring rules that consumers evaluate at runtime.
+
+Supported rule families:
 
 | Rule type       | Example                                 | Resolves to                                     |
 | --------------- | --------------------------------------- | ----------------------------------------------- |
@@ -22,15 +24,15 @@ B3 holidays follow a small set of **repeating patterns**. Instead of listing eve
 | `nth_weekday`   | `{ month: 1, weekday: monday, nth: 3 }` | MLK Day (3rd Monday of January)                 |
 | `last_weekday`  | `{ month: 5, weekday: monday }`         | Memorial Day (last Monday of May)               |
 
-Each rule supports optional `from_year` / `to_year` for conditional applicability (e.g., Black Consciousness Day becoming a national holiday).
+Rules may include optional `from_year` and `to_year` bounds for conditional applicability.
 
-Genuine one-off exceptions (e.g., emergency closures) go in a minimal `overrides` list with explicit dates -- but the vast majority of holidays need zero per-year maintenance.
+One-off closures belong in `overrides` with explicit dates. The intent is to keep exceptional data minimal while making recurring exchange calendars deterministic and auditable.
 
-## Spec Structure
+## Spec Layout
 
-One YAML file per exchange under `spec/schedules/`:
+Each exchange schedule lives under `spec/schedules/` and is validated by `spec/schemas/schedule_schema.yaml`.
 
-```
+```text
 tickerforge-spec/
   spec/
     schedules/
@@ -40,7 +42,9 @@ tickerforge-spec/
       schedule_schema.yaml
 ```
 
-### spec/schedules/b3.yaml -- B3
+## Schedule Shape
+
+Example:
 
 ```yaml
 exchange: B3
@@ -48,95 +52,49 @@ timezone: America/Sao_Paulo
 
 holidays:
   fixed:
-    - { month: 1, day: 1, name: "Confraternização Universal" }
-    - { month: 4, day: 21, name: "Tiradentes" }
-    - { month: 5, day: 1, name: "Dia do Trabalho" }
-    - { month: 9, day: 7, name: "Independência do Brasil" }
-    - { month: 10, day: 12, name: "Nossa Senhora Aparecida" }
-    - { month: 11, day: 2, name: "Finados" }
-    - { month: 11, day: 15, name: "Proclamação da República" }
-    - { month: 11, day: 20, name: "Consciência Negra", from_year: 2024 }
-    - { month: 12, day: 24, name: "Véspera de Natal" }
+    - { month: 1, day: 1, name: "Confraternizacao Universal" }
     - { month: 12, day: 25, name: "Natal" }
-    - { month: 12, day: 31, name: "Véspera de Ano Novo" }
 
   easter_offset:
-    - { offset: -48, name: "Carnaval (segunda-feira)" }
-    - { offset: -47, name: "Carnaval (terça-feira)" }
+    - { offset: -47, name: "Carnaval (terca-feira)" }
     - { offset: -2, name: "Sexta-feira Santa" }
-    - { offset: 60, name: "Corpus Christi" }
 
   overrides:
-    - { date: "2023-11-20", action: add, name: "Consciência Negra" }
+    - { date: "2023-11-20", action: add, name: "Consciencia Negra" }
 
 early_closes:
   easter_offset:
     - { offset: -46, name: "Quarta-feira de Cinzas", open: "13:00" }
 ```
 
-### spec/schedules/cme.yaml -- CME
+Core fields:
 
-```yaml
-exchange: CME
-timezone: America/Chicago
+- `exchange`: exchange identifier matching the rest of the spec
+- `timezone`: IANA timezone name for schedule evaluation
+- `holidays`: non-session rules
+- `early_closes`: session rules that keep the date tradable but alter session timing
 
-holidays:
-  fixed:
-    - { month: 1, day: 1, name: "New Year's Day" }
-    - { month: 7, day: 4, name: "Independence Day" }
-    - { month: 12, day: 25, name: "Christmas Day" }
+## Consumer Contract
 
-  nth_weekday:
-    - { month: 1, weekday: monday, nth: 3, name: "Martin Luther King Jr. Day" }
-    - { month: 2, weekday: monday, nth: 3, name: "Presidents' Day" }
-    - { month: 9, weekday: monday, nth: 1, name: "Labor Day" }
-    - { month: 11, weekday: thursday, nth: 4, name: "Thanksgiving Day" }
+For a given year, consumers should evaluate the schedule in this order:
 
-  last_weekday:
-    - { month: 5, weekday: monday, name: "Memorial Day" }
+1. Compute Easter Sunday for the year.
+2. Materialize `holidays.fixed`, applying `from_year` and `to_year` filters when present.
+3. Materialize `holidays.easter_offset`.
+4. Materialize `holidays.nth_weekday`.
+5. Materialize `holidays.last_weekday`.
+6. Apply `overrides` in order.
+7. Exclude weekend dates from holiday output.
+8. Treat sessions as weekdays minus holidays.
+9. Evaluate `early_closes` separately so those dates remain sessions with modified hours.
 
-  easter_offset:
-    - { offset: -2, name: "Good Friday" }
-```
+The spec defines the data contract and the evaluation semantics. It does not prescribe the internal class structure, cache strategy, or public API shape used by each implementation.
 
-## How Implementations Resolve Holidays
+## Why This Lives In The Spec Repo
 
-For a given year:
+- It keeps exchange session logic deterministic and versioned with the canonical data.
+- It gives every consumer the same input and the same expected behavior.
+- It avoids per-year maintenance for recurring holiday patterns.
+- It leaves room for implementation-specific adapters without making the spec repo language-aware.
 
-1. Compute Easter Sunday for the year (Computus algorithm)
-2. For each rule in `holidays.fixed`: skip if year < `from_year` or year > `to_year`, emit `date(year, month, day)`
-3. For each rule in `holidays.easter_offset`: emit `easter_sunday + offset` days
-4. For each rule in `holidays.nth_weekday`: emit nth occurrence of weekday in month
-5. For each rule in `holidays.last_weekday`: emit last occurrence of weekday in month
-6. Apply overrides: `action: add` inserts the date, `action: remove` deletes it
-7. Filter out weekends (already non-sessions)
-8. Result: set of holiday dates for that year
-9. Sessions = weekdays - holidays
-
-Both Python and Rust execute the exact same algorithm against the exact same YAML, producing identical session sets.
-
-## Implementation Details
-
-### tickerforge-py
-
-- **`tickerforge/schedule.py`**: `ExchangeSchedule` loads rules, evaluates via `dateutil.easter.easter(year)`, caches per-year. `SpecCalendar` wraps it to match the `exchange_calendars` interface (`sessions_in_range`, `first_session`, `last_session`).
-- **`tickerforge/calendars.py`**: `get_calendar()` returns `SpecCalendar` when a schedule YAML exists; falls back to `exchange_calendars` otherwise.
-- **`tickerforge/spec_loader.py`**: `load_spec()` discovers `spec/schedules/*.yaml` and registers them via `register_schedules()`.
-
-### tickerforge-rs
-
-- **`src/schedule.rs`**: `ExchangeSchedule` with Computus Easter (~15 lines), `holidays_for_year() -> BTreeSet<NaiveDate>`, `is_session()`, `sessions_in_range()`.
-- **`src/calendars.rs`**: `ExchangeCalendar` has a dual backend (`CalendarBackend::Spec` or `CalendarBackend::Bdays`); `register_schedules()` + preference for spec-driven schedules.
-- **`src/spec_loader.rs`**: `load_spec()` discovers and registers schedule YAMLs.
-
-### No changes required to expiration_rules
-
-Both `expiration_rules.py` and `expiration_rules.rs` operate on `calendar.sessions_in_range` -- swapping the calendar backend is transparent.
-
-## Why This Is Better
-
-- **Zero per-year maintenance**: Adding a new year requires no YAML changes (unless an exchange creates a new holiday)
-- **Both languages produce identical results**: Same rules, same algorithm, same output
-- **Easy to verify**: `holidays_for_year(2026)` can be unit-tested against official exchange circulars
-- **Extensible**: Adding a new exchange is one YAML file with ~10-20 rules
-- **`overrides` covers edge cases**: Emergency closures or one-off exceptions still supported without polluting the rule set
+Implementation notes belong in the consumer repositories. This document remains the language-neutral reference for `spec/schedules/*.yaml`.
