@@ -1,7 +1,5 @@
 options:
-
   # ---- Equity Options ----
-
   - type: equity
     exchange: B3
     description: Options on listed equities
@@ -13,38 +11,34 @@ options:
     aliases:
       - "opções de ações"
       - "equity options"
-
     call_month_codes:
-      - A   # January
-      - B   # February
-      - C   # March
-      - D   # April
-      - E   # May
-      - F   # June
-      - G   # July
-      - H   # August
-      - I   # September
-      - J   # October
-      - K   # November
-      - L   # December
-
+      - A # January
+      - B # February
+      - C # March
+      - D # April
+      - E # May
+      - F # June
+      - G # July
+      - H # August
+      - I # September
+      - J # October
+      - K # November
+      - L # December
     put_month_codes:
-      - M   # January
-      - N   # February
-      - O   # March
-      - P   # April
-      - Q   # May
-      - R   # June
-      - S   # July
-      - T   # August
-      - U   # September
-      - V   # October
-      - W   # November
-      - X   # December
-
+      - M # January
+      - N # February
+      - O # March
+      - P # April
+      - Q # May
+      - R # June
+      - S # July
+      - T # August
+      - U # September
+      - V # October
+      - W # November
+      - X # December
     contract_cycle: monthly
     expiration_rule: third_friday
-
     underlyings:
       - PETR4
       - VALE3
@@ -57,9 +51,7 @@ options:
       - MGLU3
       - SUZB3
       - BOVA11
-
   # ---- Index Options (Ibovespa) ----
-
   - type: index
     symbol: IBOV
     exchange: B3
@@ -72,16 +64,12 @@ options:
     aliases:
       - "opções de Ibovespa"
       - "index options"
-
     option_type_codes:
       call: C
       put: P
-
     contract_cycle: monthly
     expiration_rule: nearest_wednesday_15
-
   # ---- Dollar Options ----
-
   - type: dollar
     symbol: DOL
     exchange: B3
@@ -94,16 +82,12 @@ options:
     aliases:
       - "opções de dólar"
       - "dollar options"
-
     option_type_codes:
       call: C
       put: P
-
     contract_cycle: monthly
     expiration_rule: first_business_day
-
   # ---- Interest Rate Options (IDI) ----
-
   - type: interest_rate
     symbol: IDI
     exchange: B3
@@ -116,10 +100,8 @@ options:
     aliases:
       - "opções de IDI"
       - "rate options"
-
     option_type_codes:
       call: C
       put: P
-
     contract_cycle: monthly
     expiration_rule: first_business_day

@@ -1,11 +1,9 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
 title: Contract Rules
 description: Schema for tickerforge-spec futures contract rule files.
-
 type: object
 required:
   - contracts
-
 properties:
   contracts:
     type: array
@@ -20,18 +18,14 @@ properties:
         symbol:
           type: string
           description: Root symbol for the contract (e.g. WIN).
-
         exchange:
           type: string
           description: Exchange identifier this contract belongs to.
-
         description:
           type: string
-
         ticker_format:
           type: string
           description: Template for building the full ticker string.
-
         contract_cycle:
           type: array
           description: Month codes in which the contract expires.
@@ -39,7 +33,6 @@ properties:
             type: string
             pattern: "^[FGHJKMNQUVXZ]$"
           minItems: 1
-
         expiration_rule:
           type: object
           required:
@@ -55,13 +48,8 @@ properties:
                 - nth_weekday
                 - schedule
               description: >
-                nearest_weekday_to_day: closest occurrence of weekday to a given
-                calendar day.
-                first_business_day: first business day of contract month.
-                last_business_day: last business day of contract month.
-                fixed_day: specific calendar day of contract month.
-                nth_weekday: Nth occurrence of a weekday in contract month.
-                schedule: dates vary per contract; see description field.
+                nearest_weekday_to_day: closest occurrence of weekday to a given calendar day. first_business_day: first business day of contract month. last_business_day: last business day of contract month. fixed_day: specific calendar day of contract month. nth_weekday: Nth occurrence of a weekday in contract month. schedule: dates vary per contract; see description field.
+
             weekday:
               type: string
               enum:
@@ -85,5 +73,4 @@ properties:
               description: Human-readable note for schedule-type rules.
           additionalProperties: false
       additionalProperties: false
-
 additionalProperties: false

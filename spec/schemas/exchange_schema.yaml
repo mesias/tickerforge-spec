@@ -1,31 +1,25 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
 title: Exchange Metadata
 description: Schema for tickerforge-spec exchange definition files.
-
 type: object
 required:
   - exchange
   - timezone
   - assets
-
 properties:
   exchange:
     type: string
     description: Short exchange identifier (e.g. B3, CME).
-
   full_name:
     type: string
     description: Full legal or common name of the exchange.
-
   country:
     type: string
     description: ISO 3166-1 alpha-2 country code.
     pattern: "^[A-Z]{2}$"
-
   timezone:
     type: string
     description: IANA timezone identifier (e.g. America/Sao_Paulo).
-
   assets:
     type: object
     description: Map of asset/product identifiers to their metadata.
@@ -80,5 +74,4 @@ properties:
             additionalProperties: false
           minProperties: 1
       additionalProperties: false
-
 additionalProperties: false

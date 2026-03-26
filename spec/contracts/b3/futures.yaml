@@ -1,7 +1,5 @@
 contracts:
-
   # ---- Index Futures ----
-
   - symbol: WIN
     exchange: B3
     description: Mini Ibovespa Futures
@@ -14,7 +12,6 @@ contracts:
     aliases:
       - "mini índice"
       - "mini index"
-
   - symbol: IND
     exchange: B3
     description: Ibovespa Futures
@@ -27,9 +24,7 @@ contracts:
     aliases:
       - "índice cheio"
       - "ibovespa futures"
-
   # ---- Currency Futures ----
-
   - symbol: DOL
     exchange: B3
     description: U.S. Dollar Futures
@@ -42,7 +37,6 @@ contracts:
     aliases:
       - "dólar cheio"
       - "dollar futures"
-
   - symbol: WDO
     exchange: B3
     description: Mini U.S. Dollar Futures
@@ -55,9 +49,7 @@ contracts:
     aliases:
       - "mini dólar"
       - "mini dollar"
-
   # ---- Interest Rate Futures ----
-
   - symbol: DI1
     exchange: B3
     description: One-Day Interbank Deposit Rate Futures
@@ -70,9 +62,7 @@ contracts:
     aliases:
       - "DI futuro"
       - "interest rate futures"
-
   # ---- Commodity Futures ----
-
   - symbol: BGI
     exchange: B3
     description: Live Cattle Futures
@@ -85,7 +75,6 @@ contracts:
     aliases:
       - "boi gordo"
       - "live cattle"
-
   - symbol: CCM
     exchange: B3
     description: Cash-Settled Corn Futures
@@ -98,7 +87,6 @@ contracts:
     aliases:
       - "milho"
       - "corn futures"
-
   - symbol: ICF
     exchange: B3
     description: Arabica Coffee Futures (4/5)

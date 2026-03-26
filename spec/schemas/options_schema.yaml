@@ -1,11 +1,9 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
 title: Options Contract Rules
 description: Schema for tickerforge-spec options contract rule files.
-
 type: object
 required:
   - options
-
 properties:
   options:
     type: array
@@ -26,27 +24,21 @@ properties:
             - dollar
             - interest_rate
           description: Category of option contract.
-
         symbol:
           type: string
           description: Root symbol for non-equity options (e.g. IBOV, DOL, IDI).
-
         exchange:
           type: string
-
         description:
           type: string
-
         option_style:
           type: string
           enum:
             - american
             - european
-
         ticker_format:
           type: string
           description: Template for building the full option ticker string.
-
         call_month_codes:
           type: array
           description: Month codes for call options (equity options only).
@@ -55,7 +47,6 @@ properties:
             pattern: "^[A-L]$"
           minItems: 12
           maxItems: 12
-
         put_month_codes:
           type: array
           description: Month codes for put options (equity options only).
@@ -64,7 +55,6 @@ properties:
             pattern: "^[M-X]$"
           minItems: 12
           maxItems: 12
-
         month_codes:
           type: array
           description: Standard futures month codes (non-equity options).
@@ -72,7 +62,6 @@ properties:
             type: string
             pattern: "^[FGHJKMNQUVXZ]$"
           minItems: 1
-
         option_type_codes:
           type: object
           description: Mapping of call/put to their ticker codes.
@@ -85,7 +74,6 @@ properties:
             - call
             - put
           additionalProperties: false
-
         expiration_rule:
           type: object
           required:
@@ -117,14 +105,11 @@ properties:
               minimum: 1
               maximum: 5
           additionalProperties: false
-
         underlyings:
           type: array
           description: List of underlying symbols (equity options only).
           items:
             type: string
           minItems: 1
-
       additionalProperties: false
-
 additionalProperties: false

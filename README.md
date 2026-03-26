@@ -1,5 +1,7 @@
 # TickerForge Spec
 
+[![CI](https://github.com/mesias/tickerforge-spec/actions/workflows/ci.yml/badge.svg)](https://github.com/mesias/tickerforge-spec/actions/workflows/ci.yml)
+
 **TickerForge Spec** is the canonical specification and shared dataset used by TickerForge implementations across different programming languages.
 
 The repository defines exchange metadata, contract rules, and test cases used to resolve financial asset tickers and derivatives contracts (futures and options).

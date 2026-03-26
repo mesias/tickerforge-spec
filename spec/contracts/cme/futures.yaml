@@ -1,7 +1,5 @@
 contracts:
-
   # ---- Index Futures ----
-
   - symbol: ES
     exchange: CME
     description: E-mini S&P 500 Futures
@@ -14,7 +12,6 @@ contracts:
     aliases:
       - "e-mini s&p"
       - "s&p 500 futures"
-
   - symbol: NQ
     exchange: CME
     description: E-mini Nasdaq-100 Futures
@@ -27,7 +24,6 @@ contracts:
     aliases:
       - "e-mini nasdaq"
       - "nasdaq 100 futures"
-
   - symbol: RTY
     exchange: CME
     description: E-mini Russell 2000 Futures
@@ -40,9 +36,7 @@ contracts:
     aliases:
       - "e-mini russell"
       - "russell 2000 futures"
-
   # ---- Interest Rate Futures ----
-
   - symbol: ZN
     exchange: CME
     description: 10-Year Treasury Note Futures
@@ -55,7 +49,6 @@ contracts:
     aliases:
       - "10-year t-note"
       - "ten year treasury"
-
   - symbol: ZF
     exchange: CME
     description: 5-Year Treasury Note Futures
@@ -68,9 +61,7 @@ contracts:
     aliases:
       - "5-year t-note"
       - "five year treasury"
-
   # ---- Commodity Futures ----
-
   - symbol: CL
     exchange: CME
     description: Crude Oil Futures (WTI)
@@ -83,7 +74,6 @@ contracts:
     aliases:
       - "crude oil"
       - "wti"
-
   - symbol: GC
     exchange: CME
     description: Gold Futures
@@ -96,9 +86,7 @@ contracts:
     aliases:
       - "gold"
       - "comex gold"
-
   # ---- Currency Futures ----
-
   - symbol: 6E
     exchange: CME
     description: Euro FX Futures
@@ -111,7 +99,6 @@ contracts:
     aliases:
       - "euro fx"
       - "eur/usd futures"
-
   - symbol: 6J
     exchange: CME
     description: Japanese Yen Futures

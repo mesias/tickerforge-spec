@@ -1,29 +1,25 @@
 exchange: B3
 timezone: America/Sao_Paulo
-
 holidays:
   fixed:
-    - { month: 1, day: 1, name: "Confraternização Universal" }
-    - { month: 4, day: 21, name: "Tiradentes" }
-    - { month: 5, day: 1, name: "Dia do Trabalho" }
-    - { month: 9, day: 7, name: "Independência do Brasil" }
-    - { month: 10, day: 12, name: "Nossa Senhora Aparecida" }
-    - { month: 11, day: 2, name: "Finados" }
-    - { month: 11, day: 15, name: "Proclamação da República" }
-    - { month: 11, day: 20, name: "Consciência Negra", from_year: 2024 }
-    - { month: 12, day: 24, name: "Véspera de Natal" }
-    - { month: 12, day: 25, name: "Natal" }
-    - { month: 12, day: 31, name: "Véspera de Ano Novo" }
-
+    - {month: 1, day: 1, name: "Confraternização Universal"}
+    - {month: 4, day: 21, name: "Tiradentes"}
+    - {month: 5, day: 1, name: "Dia do Trabalho"}
+    - {month: 9, day: 7, name: "Independência do Brasil"}
+    - {month: 10, day: 12, name: "Nossa Senhora Aparecida"}
+    - {month: 11, day: 2, name: "Finados"}
+    - {month: 11, day: 15, name: "Proclamação da República"}
+    - {month: 11, day: 20, name: "Consciência Negra", from_year: 2024}
+    - {month: 12, day: 24, name: "Véspera de Natal"}
+    - {month: 12, day: 25, name: "Natal"}
+    - {month: 12, day: 31, name: "Véspera de Ano Novo"}
   easter_offset:
-    - { offset: -48, name: "Carnaval (segunda-feira)" }
-    - { offset: -47, name: "Carnaval (terça-feira)" }
-    - { offset: -2, name: "Sexta-feira Santa" }
-    - { offset: 60, name: "Corpus Christi" }
-
+    - {offset: -48, name: "Carnaval (segunda-feira)"}
+    - {offset: -47, name: "Carnaval (terça-feira)"}
+    - {offset: -2, name: "Sexta-feira Santa"}
+    - {offset: 60, name: "Corpus Christi"}
   overrides:
-    - { date: "2023-11-20", action: add, name: "Consciência Negra" }
-
+    - {date: "2023-11-20", action: add, name: "Consciência Negra"}
 early_closes:
   easter_offset:
-    - { offset: -46, name: "Quarta-feira de Cinzas", open: "13:00" }
+    - {offset: -46, name: "Quarta-feira de Cinzas", open: "13:00"}

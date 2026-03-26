@@ -3,11 +3,8 @@ mic: XCME
 full_name: Chicago Mercantile Exchange
 country: US
 timezone: America/Chicago
-
 assets:
-
   # --- Index Futures ---
-
   ES:
     type: future
     category: index
@@ -16,7 +13,6 @@ assets:
       regular:
         start: "17:00"
         end: "16:00"
-
   NQ:
     type: future
     category: index
@@ -25,7 +21,6 @@ assets:
       regular:
         start: "17:00"
         end: "16:00"
-
   RTY:
     type: future
     category: index
@@ -34,9 +29,7 @@ assets:
       regular:
         start: "17:00"
         end: "16:00"
-
   # --- Interest Rate Futures ---
-
   ZN:
     type: future
     category: interest_rate
@@ -45,7 +38,6 @@ assets:
       regular:
         start: "17:00"
         end: "16:00"
-
   ZF:
     type: future
     category: interest_rate
@@ -54,9 +46,7 @@ assets:
       regular:
         start: "17:00"
         end: "16:00"
-
   # --- Commodity Futures ---
-
   CL:
     type: future
     category: commodity
@@ -65,7 +55,6 @@ assets:
       regular:
         start: "17:00"
         end: "16:00"
-
   GC:
     type: future
     category: commodity
@@ -74,9 +63,7 @@ assets:
       regular:
         start: "17:00"
         end: "16:00"
-
   # --- Currency Futures ---
-
   6E:
     type: future
     category: currency
@@ -85,7 +72,6 @@ assets:
       regular:
         start: "17:00"
         end: "16:00"
-
   6J:
     type: future
     category: currency
