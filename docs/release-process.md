@@ -14,13 +14,13 @@ The root `VERSION` file is the release authority.
 ## Prerequisites
 
 - `spec/` is up to date
-- `VERSION`, `pyproject.toml`, and root `Cargo.toml` versions all match (`python scripts/check_versions.py`). The `rust/` manifest is CI-only (`publish = false`) and its `version` is not part of this check.
+- Root `VERSION` is the only version you edit; Python reads it via Hatch (`dynamic = ["version"]`). Root `Cargo.toml` must match `VERSION` (`python scripts/check_versions.py`; run `python scripts/sync_cargo_version.py` after changing `VERSION`). The `rust/` manifest is CI-only (`publish = false`) and its `version` is not part of this check.
 - GitHub **Environments**: `release`; repository (or environment) secret **`PYPI_API_TOKEN`** for PyPI, and **`CRATES_IO_TOKEN`** for crates.io
 
 ## Steps
 
 1. Update root `VERSION` (semantic versioning).
-2. Bump `version` in `pyproject.toml` and root `Cargo.toml` to match `VERSION`.
+2. Run `python scripts/sync_cargo_version.py` so root `Cargo.toml` matches (Cargo cannot read `VERSION` directly).
 3. Run `python scripts/check_versions.py`.
 4. Commit changes.
 5. Create release tag:

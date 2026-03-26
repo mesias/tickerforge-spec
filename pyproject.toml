@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "tickerforge-spec-data"
-version = "0.1.1"
+dynamic = ["version"]
 description = "Canonical tickerforge specification (YAML/CSV) for tickerforge-py and other consumers."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -14,6 +14,10 @@ authors = [{ name = "TickerForge" }]
 [project.urls]
 Homepage = "https://github.com/mesias/tickerforge-spec"
 Repository = "https://github.com/mesias/tickerforge-spec"
+
+[tool.hatch.version]
+path = "VERSION"
+pattern = "^(?P<version>\\S+)"
 
 [tool.hatch.build.targets.sdist]
 include = [
