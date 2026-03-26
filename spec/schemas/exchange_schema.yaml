@@ -57,7 +57,12 @@ properties:
           type: string
         sessions:
           type: object
-          description: Named trading sessions (e.g. regular, pre_market, after_market).
+          description: |
+            Clock-time trading bands keyed by session name (YAML mapping order is preserved).
+            Keys are band identifiers; values are start/end in HH:MM (exchange local time).
+            The first key must be `regular`. Additional keys (e.g. afternoon) define further
+            windows in order; gaps between end and the next start are implicit pauses.
+            Loaders expose this as an ordered list of segments with `name` taken from each key.
           additionalProperties:
             type: object
             required:
