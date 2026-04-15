@@ -224,6 +224,15 @@ Examples:
 
 All implementations should rely on this specification.
 
+## Smart ticker parsing
+
+Both the Python and Rust implementations support **smart parsing**: you can pass either a **full ticker** (e.g. `INDM26`) or a **root symbol** (e.g. `IND`) to the parser.
+
+* **Full ticker** — year and month are extracted directly from the string (`2000 + yy`). No reference date is needed.
+* **Root symbol** — the parser resolves the front-month contract via the generator, using `reference_date` (defaults to today when omitted).
+
+See [`tickerforge-py`](https://github.com/mesias/tickerforge-py) and [`tickerforge-rs`](https://github.com/mesias/tickerforge-rs) READMEs for language-specific examples.
+
 ---
 
 # Versioning and Releases
