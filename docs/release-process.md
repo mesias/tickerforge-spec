@@ -11,6 +11,8 @@ The canonical spec files live only under the repository root `spec/`; the Python
 
 The root `VERSION` file is the release authority.
 
+![Version authority flow](version-authority-flow.svg)
+
 ## Prerequisites
 
 - `spec/` is up to date
