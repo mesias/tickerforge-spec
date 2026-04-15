@@ -1,6 +1,6 @@
 [package]
 name = "tickerforge-spec-data"
-version = "0.1.1"
+version = "0.1.5"
 edition = "2021"
 description = "Canonical tickerforge YAML spec tree for Rust (same content as the Python tickerforge-spec-data wheel)."
 license = "MIT"
