@@ -25,3 +25,5 @@ dist/
 Cargo.lock
 rust/target/
 rust/Cargo.lock
+packaging/rust/target/
+packaging/rust/Cargo.lock
