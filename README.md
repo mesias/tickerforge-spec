@@ -4,7 +4,7 @@
 
 **TickerForge Spec** is the canonical specification and shared dataset used by TickerForge implementations across different programming languages.
 
-The repository defines exchange metadata, contract rules, and test cases used to resolve financial asset tickers and derivatives contracts (futures and options).
+The repository defines exchange metadata, contract rules, cash equities definitions, and test cases used to resolve financial asset tickers and derivatives contracts (futures and options).
 
 It serves as the **source of truth** for all implementations of the TickerForge ecosystem.
 
@@ -42,6 +42,8 @@ spec/
       options.yaml
     cme/
       futures.yaml
+  equities/
+    b3.yaml
   tests/
     b3/
       futures_resolve.csv
@@ -102,6 +104,28 @@ assets:
     trading_hours:
       start: "10:00"
       end: "18:25"
+```
+
+---
+
+# Cash Equities
+
+Cash equities (like stocks and REITs) are defined separately from derivative contracts. They specify explicit regular trading sessions, lot multipliers (`contract_multiplier`), and aliases.
+
+Example:
+
+```yaml
+equities:
+  - symbol: PETR4
+    exchange: B3
+    type: equity
+    description: Petroleo Brasileiro SA Petrobras Preference Shares
+    currency: BRL
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
 ```
 
 ---
