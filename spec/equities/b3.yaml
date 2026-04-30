@@ -1,0 +1,496 @@
+equities:
+  - symbol: PETR4
+    exchange: B3
+    type: equity
+    description: Petroleo Brasileiro SA Petrobras Preference Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: VALE3
+    exchange: B3
+    type: equity
+    description: Vale SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: ITUB4
+    exchange: B3
+    type: equity
+    description: Itau Unibanco Holding SA Preference Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: BBDC4
+    exchange: B3
+    type: equity
+    description: Banco Bradesco SA Preference Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: B3SA3
+    exchange: B3
+    type: equity
+    description: B3 SA - Brasil Bolsa Balcao Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: ABEV3
+    exchange: B3
+    type: equity
+    description: Ambev SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: WEGE3
+    exchange: B3
+    type: equity
+    description: WEG SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: BBAS3
+    exchange: B3
+    type: equity
+    description: Banco do Brasil SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: ELET3
+    exchange: B3
+    type: equity
+    description: Centrais Eletricas Brasileiras SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: RENT3
+    exchange: B3
+    type: equity
+    description: Localiza Rent a Car SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: SUZB3
+    exchange: B3
+    type: equity
+    description: Suzano SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: BPAC11
+    exchange: B3
+    type: equity
+    description: Banco BTG Pactual SA Units
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: EQTL3
+    exchange: B3
+    type: equity
+    description: Equatorial Energia SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: RADL3
+    exchange: B3
+    type: equity
+    description: Raia Drogasil SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: PRIO3
+    exchange: B3
+    type: equity
+    description: Petro Rio SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: ITSA4
+    exchange: B3
+    type: equity
+    description: Itausa SA Preference Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: BBSE3
+    exchange: B3
+    type: equity
+    description: BB Seguridade Participacoes SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: JBSS3
+    exchange: B3
+    type: equity
+    description: JBS SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: VIVT3
+    exchange: B3
+    type: equity
+    description: Telefonica Brasil SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: HAPV3
+    exchange: B3
+    type: equity
+    description: Hapvida Participacoes e Investimentos SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: CMIG4
+    exchange: B3
+    type: equity
+    description: Cia Energetica de Minas Gerais Preference Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: KLBN11
+    exchange: B3
+    type: equity
+    description: Klabin SA Units
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: SANB11
+    exchange: B3
+    type: equity
+    description: Banco Santander Brasil SA Units
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: LREN3
+    exchange: B3
+    type: equity
+    description: Lojas Renner SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: CSNA3
+    exchange: B3
+    type: equity
+    description: Cia Siderurgica Nacional SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: GGBR4
+    exchange: B3
+    type: equity
+    description: Gerdau SA Preference Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: ENEV3
+    exchange: B3
+    type: equity
+    description: Eneva SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: CPLE6
+    exchange: B3
+    type: equity
+    description: Cia Paranaense de Energia Preference Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: TOTS3
+    exchange: B3
+    type: equity
+    description: TOTVS SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: EGIE3
+    exchange: B3
+    type: equity
+    description: Engie Brasil Energia SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: TIMS3
+    exchange: B3
+    type: equity
+    description: TIM SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: CCRO3
+    exchange: B3
+    type: equity
+    description: CCR SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: SABP11
+    exchange: B3
+    type: equity
+    description: Cia de Saneamento Basico do Estado de Sao Paulo Units
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: BRFS3
+    exchange: B3
+    type: equity
+    description: BRF SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: UGPA3
+    exchange: B3
+    type: equity
+    description: Ultrapar Participacoes SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: EMBR3
+    exchange: B3
+    type: equity
+    description: Embraer SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: NTCO3
+    exchange: B3
+    type: equity
+    description: Natura &Co Holding SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: CYRE3
+    exchange: B3
+    type: equity
+    description: Cyrela Brazil Realty SA Empreendimentos e Participacoes Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: MULT3
+    exchange: B3
+    type: equity
+    description: Multiplan Empreendimentos Imobiliarios SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: ELET6
+    exchange: B3
+    type: equity
+    description: Centrais Eletricas Brasileiras SA Preference Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: ASAI3
+    exchange: B3
+    type: equity
+    description: Sendas Distribuidora SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: CRFB3
+    exchange: B3
+    type: equity
+    description: Atacadao SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: RAIL3
+    exchange: B3
+    type: equity
+    description: Rumo SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: CSAN3
+    exchange: B3
+    type: equity
+    description: Cosan SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
+  - symbol: VAMO3
+    exchange: B3
+    type: equity
+    description: Vamos Locacao de Caminhoes Maquinas e Equipamentos SA Ordinary Shares
+    currency: BRL
+    tick_size: 0.01
+    contract_multiplier: 1.00
+    sessions:
+      regular:
+        start: "10:00"
+        end: "17:00"
