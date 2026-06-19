@@ -6,7 +6,7 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: bimonthly_even
     expiration_rule: nearest_wednesday_15
-    contract_multiplier: 0.20
+    contract_multiplier: 1.00
     tick_size: 5
     currency: BRL
     aliases:
@@ -18,12 +18,36 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: bimonthly_even
     expiration_rule: nearest_wednesday_15
-    contract_multiplier: 1.00
+    contract_multiplier: 5.00
     tick_size: 5
     currency: BRL
     aliases:
       - "índice cheio"
       - "ibovespa futures"
+  - symbol: ISP
+    exchange: B3
+    description: S&P 500 Futures
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle: quarterly
+    expiration_rule: third_friday
+    contract_multiplier: 50.00
+    tick_size: 0.25
+    currency: USD
+    aliases:
+      - "s&p 500 futures"
+      - "s&p 500"
+  - symbol: WSP
+    exchange: B3
+    description: Micro S&P 500 Futures
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle: quarterly
+    expiration_rule: third_friday
+    contract_multiplier: 2.50
+    tick_size: 0.25
+    currency: USD
+    aliases:
+      - "micro s&p 500 futures"
+      - "micro s&p 500"
   # ---- Currency Futures ----
   - symbol: DOL
     exchange: B3
@@ -31,7 +55,7 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: monthly
     expiration_rule: first_business_day
-    contract_multiplier: 50.00
+    contract_multiplier: 5.00
     tick_size: 0.50
     currency: BRL
     aliases:
@@ -43,7 +67,7 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: monthly
     expiration_rule: first_business_day
-    contract_multiplier: 10.00
+    contract_multiplier: 1.00
     tick_size: 0.50
     currency: BRL
     aliases:
@@ -69,7 +93,7 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: monthly
     expiration_rule: last_business_day
-    contract_multiplier: 330.00
+    contract_multiplier: 1.00
     tick_size: 0.05
     currency: BRL
     aliases:
@@ -81,7 +105,7 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: b3_corn
     expiration_rule: fixed_day_15
-    contract_multiplier: 450.00
+    contract_multiplier: 1.00
     tick_size: 0.01
     currency: BRL
     aliases:
@@ -93,9 +117,89 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: b3_coffee
     expiration_rule: schedule
-    contract_multiplier: 100.00
+    contract_multiplier: 1.00
     tick_size: 0.05
     currency: USD
     aliases:
       - "café arábica"
       - "arabica coffee"
+  - symbol: ETH
+    exchange: B3
+    description: Hydrous Ethanol Futures
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle: monthly
+    expiration_rule: last_business_day
+    contract_multiplier: 1.00
+    tick_size: 0.50
+    currency: BRL
+    aliases:
+      - "ethanol futures"
+      - "etanol hidratado"
+  # ---- Cryptocurrency Futures ----
+  - symbol: ETR
+    exchange: B3
+    description: Ethereum Futures
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle: monthly
+    expiration_rule: last_friday
+    contract_multiplier: 1.00
+    tick_size: 0.10
+    currency: USD
+    aliases:
+      - "ethereum futures"
+  - symbol: SOL
+    exchange: B3
+    description: Solana Futures
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle: monthly
+    expiration_rule: last_friday
+    contract_multiplier: 1.00
+    tick_size: 0.01
+    currency: USD
+    aliases:
+      - "solana futures"
+  - symbol: BIT
+    exchange: B3
+    description: Bitcoin Futures
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle: monthly
+    expiration_rule: last_friday
+    contract_multiplier: 1.00
+    tick_size: 2.00
+    currency: BRL
+    aliases:
+      - "bitcoin futures"
+  # ---- Soybean & Gold Futures ----
+  - symbol: SJC
+    exchange: B3
+    description: Soybean CBOT Futures
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle: b3_corn
+    expiration_rule: second_business_day_prior_to_month
+    contract_multiplier: 1.00
+    tick_size: 0.01
+    currency: USD
+    aliases:
+      - "soybean futures"
+  - symbol: SOY
+    exchange: B3
+    description: Soybean FOB Santos Futures
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle: b3_corn
+    expiration_rule: business_day_prior_to_16th_of_preceding_month
+    contract_multiplier: 1.00
+    tick_size: 0.01
+    currency: USD
+    aliases:
+      - "soybean fob santos"
+  - symbol: GLD
+    exchange: B3
+    description: Gold Futures
+    ticker_format: "{symbol}{month_code}{yy}"
+    contract_cycle: monthly
+    expiration_rule: third_to_last_business_day
+    contract_multiplier: 1.00
+    tick_size: 0.25
+    currency: USD
+    aliases:
+      - "gold futures"

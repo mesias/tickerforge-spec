@@ -21,6 +21,22 @@ assets:
       regular:
         start: "09:00"
         end: "18:25"
+  ISP:
+    type: future
+    category: index
+    description: S&P 500 Futures
+    sessions:
+      regular:
+        start: "09:00"
+        end: "18:25"
+  WSP:
+    type: future
+    category: index
+    description: Micro S&P 500 Futures
+    sessions:
+      regular:
+        start: "09:00"
+        end: "18:25"
   # --- Currency Futures ---
   DOL:
     type: future
@@ -47,6 +63,31 @@ assets:
       regular:
         start: "09:00"
         end: "18:15"
+  # --- Cryptocurrency Futures ---
+  ETR:
+    type: future
+    category: crypto
+    description: Ethereum Futures
+    sessions:
+      regular:
+        start: "09:00"
+        end: "18:30"
+  SOL:
+    type: future
+    category: crypto
+    description: Solana Futures
+    sessions:
+      regular:
+        start: "09:00"
+        end: "18:30"
+  BIT:
+    type: future
+    category: crypto
+    description: Bitcoin Futures
+    sessions:
+      regular:
+        start: "09:00"
+        end: "18:30"
   # --- Commodity Futures ---
   BGI:
     type: future
@@ -72,6 +113,38 @@ assets:
       regular:
         start: "09:00"
         end: "16:20"
+  SJC:
+    type: future
+    category: commodity
+    description: Soybean CBOT Futures
+    sessions:
+      regular:
+        start: "09:00"
+        end: "16:20"
+  SOY:
+    type: future
+    category: commodity
+    description: Soybean FOB Santos Futures
+    sessions:
+      regular:
+        start: "09:00"
+        end: "16:20"
+  GLD:
+    type: future
+    category: commodity
+    description: Gold Futures
+    sessions:
+      regular:
+        start: "09:00"
+        end: "18:30"
+  ETH:
+    type: future
+    category: commodity
+    description: Hydrous Ethanol Futures
+    sessions:
+      regular:
+        start: "09:00"
+        end: "15:00"
   # --- Equity Options ---
   EQUITY_OPTIONS:
     type: option
