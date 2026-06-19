@@ -82,3 +82,18 @@ expiration_rules:
   schedule:
     description: Dates vary per contract month; consult exchange maturity calendar
     type: schedule
+  last_friday:
+    description: Last Friday of the contract month
+    type: last_weekday_of_month
+    weekday: friday
+  second_business_day_prior_to_month:
+    description: Second business day prior to the contract month
+    type: second_business_day_prior_to_month
+  business_day_prior_to_16th_of_preceding_month:
+    description: Business day prior to the 16th calendar day of the preceding month
+    type: business_day_prior_to_day_of_preceding_month
+    day: 16
+  third_to_last_business_day:
+    description: Third to last business day of the contract month
+    type: nth_business_day_from_end
+    n: 3

@@ -5,7 +5,7 @@ equities:
     description: Petroleo Brasileiro SA Petrobras Preference Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -16,7 +16,7 @@ equities:
     description: Vale SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -27,7 +27,7 @@ equities:
     description: Itau Unibanco Holding SA Preference Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -38,7 +38,7 @@ equities:
     description: Banco Bradesco SA Preference Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -49,7 +49,7 @@ equities:
     description: B3 SA - Brasil Bolsa Balcao Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -60,7 +60,7 @@ equities:
     description: Ambev SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -71,7 +71,7 @@ equities:
     description: WEG SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -82,7 +82,7 @@ equities:
     description: Banco do Brasil SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -93,7 +93,7 @@ equities:
     description: Centrais Eletricas Brasileiras SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -104,7 +104,7 @@ equities:
     description: Localiza Rent a Car SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -115,7 +115,7 @@ equities:
     description: Suzano SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -126,7 +126,7 @@ equities:
     description: Banco BTG Pactual SA Units
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -137,7 +137,7 @@ equities:
     description: Equatorial Energia SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -148,7 +148,7 @@ equities:
     description: Raia Drogasil SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -159,7 +159,7 @@ equities:
     description: Petro Rio SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -170,7 +170,7 @@ equities:
     description: Itausa SA Preference Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -181,7 +181,7 @@ equities:
     description: BB Seguridade Participacoes SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -192,7 +192,7 @@ equities:
     description: JBS SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -203,7 +203,7 @@ equities:
     description: Telefonica Brasil SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -214,7 +214,7 @@ equities:
     description: Hapvida Participacoes e Investimentos SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -225,7 +225,7 @@ equities:
     description: Cia Energetica de Minas Gerais Preference Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -236,7 +236,7 @@ equities:
     description: Klabin SA Units
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -247,7 +247,7 @@ equities:
     description: Banco Santander Brasil SA Units
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -258,7 +258,7 @@ equities:
     description: Lojas Renner SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -269,7 +269,7 @@ equities:
     description: Cia Siderurgica Nacional SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -280,7 +280,7 @@ equities:
     description: Gerdau SA Preference Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -291,7 +291,7 @@ equities:
     description: Eneva SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -302,7 +302,7 @@ equities:
     description: Cia Paranaense de Energia Preference Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -313,7 +313,7 @@ equities:
     description: TOTVS SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -324,7 +324,7 @@ equities:
     description: Engie Brasil Energia SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -335,7 +335,7 @@ equities:
     description: TIM SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -346,7 +346,7 @@ equities:
     description: CCR SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -357,7 +357,7 @@ equities:
     description: Cia de Saneamento Basico do Estado de Sao Paulo Units
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -368,7 +368,7 @@ equities:
     description: BRF SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -379,7 +379,7 @@ equities:
     description: Ultrapar Participacoes SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -390,7 +390,7 @@ equities:
     description: Embraer SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -401,7 +401,7 @@ equities:
     description: Natura &Co Holding SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -412,7 +412,7 @@ equities:
     description: Cyrela Brazil Realty SA Empreendimentos e Participacoes Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -423,7 +423,7 @@ equities:
     description: Multiplan Empreendimentos Imobiliarios SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -434,7 +434,7 @@ equities:
     description: Centrais Eletricas Brasileiras SA Preference Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -445,7 +445,7 @@ equities:
     description: Sendas Distribuidora SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -456,7 +456,7 @@ equities:
     description: Atacadao SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -467,7 +467,7 @@ equities:
     description: Rumo SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -478,7 +478,7 @@ equities:
     description: Cosan SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
@@ -489,7 +489,7 @@ equities:
     description: Vamos Locacao de Caminhoes Maquinas e Equipamentos SA Ordinary Shares
     currency: BRL
     tick_size: 0.01
-    contract_multiplier: 1.00
+    contract_multiplier: 100.00
     sessions:
       regular:
         start: "10:00"
