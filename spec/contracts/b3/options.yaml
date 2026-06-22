@@ -51,6 +51,8 @@ options:
       - MGLU3
       - SUZB3
       - BOVA11
+      - BBAS3
+      - JBSS3
   # ---- Index Options (Ibovespa) ----
   - type: index
     symbol: IBOV
