@@ -30,9 +30,12 @@ properties:
           type: string
         tick_size:
           type: number
-        contract_multiplier:
+        contract_standard:
+          type: integer
+          description: Standard lot size standard.
+        contract_size:
           type: number
-          description: Standard lot size multiplier
+          description: Underlying asset size of the contract.
         aliases:
           type: array
           items:

@@ -6,7 +6,8 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: bimonthly_even
     expiration_rule: nearest_wednesday_15
-    contract_multiplier: 1.00
+    contract_size: 0.20
+    contract_standard: 1
     tick_size: 5
     currency: BRL
     aliases:
@@ -18,7 +19,8 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: bimonthly_even
     expiration_rule: nearest_wednesday_15
-    contract_multiplier: 5.00
+    contract_size: 1.00
+    contract_standard: 5
     tick_size: 5
     currency: BRL
     aliases:
@@ -30,7 +32,8 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: quarterly
     expiration_rule: third_friday
-    contract_multiplier: 50.00
+    contract_size: 50.00
+    contract_standard: 1
     tick_size: 0.25
     currency: USD
     aliases:
@@ -42,7 +45,8 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: quarterly
     expiration_rule: third_friday
-    contract_multiplier: 2.50
+    contract_size: 2.50
+    contract_standard: 1
     tick_size: 0.25
     currency: USD
     aliases:
@@ -55,8 +59,9 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: monthly
     expiration_rule: first_business_day
-    contract_multiplier: 5.00
-    tick_size: 0.50
+    contract_size: 50000.00
+    contract_standard: 5
+    tick_size: 0.5
     currency: BRL
     aliases:
       - "dólar cheio"
@@ -67,8 +72,9 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: monthly
     expiration_rule: first_business_day
-    contract_multiplier: 1.00
-    tick_size: 0.50
+    contract_size: 10000.00
+    contract_standard: 1
+    tick_size: 0.5
     currency: BRL
     aliases:
       - "mini dólar"
@@ -80,7 +86,8 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: monthly
     expiration_rule: first_business_day
-    contract_multiplier: 1.00
+    contract_size: 100000.00
+    contract_standard: 1
     tick_size: 0.01
     currency: BRL
     aliases:
@@ -93,7 +100,8 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: monthly
     expiration_rule: last_business_day
-    contract_multiplier: 1.00
+    contract_size: 330.00
+    contract_standard: 1
     tick_size: 0.05
     currency: BRL
     aliases:
@@ -105,7 +113,8 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: b3_corn
     expiration_rule: fixed_day_15
-    contract_multiplier: 1.00
+    contract_size: 450.00
+    contract_standard: 1
     tick_size: 0.01
     currency: BRL
     aliases:
@@ -117,7 +126,8 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: b3_coffee
     expiration_rule: schedule
-    contract_multiplier: 1.00
+    contract_size: 100.00
+    contract_standard: 1
     tick_size: 0.05
     currency: USD
     aliases:
@@ -129,7 +139,8 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: monthly
     expiration_rule: last_business_day
-    contract_multiplier: 1.00
+    contract_size: 10.00
+    contract_standard: 1
     tick_size: 0.50
     currency: BRL
     aliases:
@@ -142,7 +153,8 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: monthly
     expiration_rule: last_friday
-    contract_multiplier: 1.00
+    contract_size: 0.1
+    contract_standard: 1
     tick_size: 0.10
     currency: USD
     aliases:
@@ -153,7 +165,8 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: monthly
     expiration_rule: last_friday
-    contract_multiplier: 1.00
+    contract_size: 5.00
+    contract_standard: 5
     tick_size: 0.01
     currency: USD
     aliases:
@@ -164,8 +177,9 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: monthly
     expiration_rule: last_friday
-    contract_multiplier: 1.00
-    tick_size: 2.00
+    contract_size: 0.01
+    contract_standard: 1
+    tick_size: 20.00
     currency: BRL
     aliases:
       - "bitcoin futures"
@@ -176,7 +190,8 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: b3_corn
     expiration_rule: second_business_day_prior_to_month
-    contract_multiplier: 1.00
+    contract_size: 450.00
+    contract_standard: 1
     tick_size: 0.01
     currency: USD
     aliases:
@@ -187,7 +202,8 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: b3_corn
     expiration_rule: business_day_prior_to_16th_of_preceding_month
-    contract_multiplier: 1.00
+    contract_size: 34.00
+    contract_standard: 1
     tick_size: 0.01
     currency: USD
     aliases:
@@ -198,7 +214,8 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: monthly
     expiration_rule: third_to_last_business_day
-    contract_multiplier: 1.00
+    contract_size: 1.00
+    contract_standard: 1
     tick_size: 0.25
     currency: USD
     aliases:

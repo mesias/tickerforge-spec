@@ -39,6 +39,23 @@ properties:
         ticker_format:
           type: string
           description: Template for building the full option ticker string.
+        contract_standard:
+          type: integer
+          description: Minimum lot size standard.
+        contract_size:
+          type: number
+          description: Size of one contract in units of the underlying asset.
+        tick_size:
+          type: number
+          description: Minimum price increment.
+        currency:
+          type: string
+          description: Currency code.
+        aliases:
+          type: array
+          description: Alternative names.
+          items:
+            type: string
         call_month_codes:
           type: array
           description: Month codes for call options (equity options only).
