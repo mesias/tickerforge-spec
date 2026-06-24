@@ -6,7 +6,8 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: quarterly
     expiration_rule: third_friday
-    contract_multiplier: 50.00
+    contract_size: 50.00
+    contract_standard: 1
     tick_size: 0.25
     currency: USD
     aliases:
@@ -18,7 +19,8 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: quarterly
     expiration_rule: third_friday
-    contract_multiplier: 20.00
+    contract_size: 20.00
+    contract_standard: 1
     tick_size: 0.25
     currency: USD
     aliases:
@@ -30,7 +32,8 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: quarterly
     expiration_rule: third_friday
-    contract_multiplier: 50.00
+    contract_size: 50.00
+    contract_standard: 1
     tick_size: 0.10
     currency: USD
     aliases:
@@ -43,7 +46,8 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: quarterly
     expiration_rule: schedule
-    contract_multiplier: 1000.00
+    contract_size: 1000.00
+    contract_standard: 1
     tick_size: 0.015625
     currency: USD
     aliases:
@@ -55,7 +59,8 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: quarterly
     expiration_rule: schedule
-    contract_multiplier: 1000.00
+    contract_size: 1000.00
+    contract_standard: 1
     tick_size: 0.0078125
     currency: USD
     aliases:
@@ -68,7 +73,8 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: monthly
     expiration_rule: schedule
-    contract_multiplier: 1000.00
+    contract_size: 1000.00
+    contract_standard: 1
     tick_size: 0.01
     currency: USD
     aliases:
@@ -80,7 +86,8 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: bimonthly_even
     expiration_rule: schedule
-    contract_multiplier: 100.00
+    contract_size: 100.00
+    contract_standard: 1
     tick_size: 0.10
     currency: USD
     aliases:
@@ -93,7 +100,8 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: quarterly
     expiration_rule: schedule
-    contract_multiplier: 125000.00
+    contract_size: 125000.00
+    contract_standard: 1
     tick_size: 0.00005
     currency: USD
     aliases:
@@ -105,7 +113,8 @@ contracts:
     ticker_format: "{symbol}{month_code}{yy}"
     contract_cycle: quarterly
     expiration_rule: schedule
-    contract_multiplier: 12500000.00
+    contract_size: 12500000.00
+    contract_standard: 1
     tick_size: 0.0000005
     currency: USD
     aliases:

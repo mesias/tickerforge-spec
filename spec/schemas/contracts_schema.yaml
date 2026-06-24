@@ -26,6 +26,23 @@ properties:
         ticker_format:
           type: string
           description: Template for building the full ticker string.
+        contract_standard:
+          type: integer
+          description: Minimum lot size standard in contracts.
+        contract_size:
+          type: number
+          description: Size of one contract in units of the underlying asset.
+        tick_size:
+          type: number
+          description: Minimum price increment.
+        currency:
+          type: string
+          description: Quotation currency code.
+        aliases:
+          type: array
+          description: Alternative names.
+          items:
+            type: string
         contract_cycle:
           type: array
           description: Month codes in which the contract expires.

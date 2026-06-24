@@ -5,7 +5,7 @@ options:
     description: Options on listed equities
     option_style: american
     ticker_format: "{root}{month_code}{strike}"
-    contract_multiplier: 100.00
+    contract_standard: 100
     tick_size: 0.01
     currency: BRL
     aliases:
@@ -60,7 +60,7 @@ options:
     description: Options on Ibovespa Index
     option_style: european
     ticker_format: "{symbol}{month_code}{yy}{option_type}{strike}"
-    contract_multiplier: 1.00
+    contract_standard: 1
     tick_size: 5
     currency: BRL
     aliases:
@@ -78,7 +78,7 @@ options:
     description: Options on U.S. Dollar
     option_style: european
     ticker_format: "{symbol}{month_code}{yy}{option_type}{strike}"
-    contract_multiplier: 5.00
+    contract_standard: 5
     tick_size: 0.50
     currency: BRL
     aliases:
@@ -96,7 +96,7 @@ options:
     description: Options on IDI (Interbank Deposit Index)
     option_style: european
     ticker_format: "{symbol}{month_code}{yy}{option_type}{strike}"
-    contract_multiplier: 1.00
+    contract_standard: 1
     tick_size: 0.01
     currency: BRL
     aliases:
