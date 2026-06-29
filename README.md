@@ -1,5 +1,7 @@
 # TickerForge Spec
 
+[![PyPI](https://img.shields.io/pypi/v/tickerforge-spec-data)](https://pypi.org/project/tickerforge-spec-data/)
+[![crates.io](https://img.shields.io/crates/v/tickerforge-spec-data)](https://crates.io/crates/tickerforge-spec-data)
 [![CI](https://github.com/mesias/tickerforge-spec/actions/workflows/ci.yml/badge.svg)](https://github.com/mesias/tickerforge-spec/actions/workflows/ci.yml)
 
 **TickerForge Spec** is the canonical specification and shared dataset used by TickerForge implementations across different programming languages.
@@ -7,6 +9,17 @@
 The repository defines exchange metadata, contract rules, cash equities definitions, and test cases used to resolve financial asset tickers and derivatives contracts (futures and options).
 
 It serves as the **source of truth** for all implementations of the TickerForge ecosystem.
+
+## Install
+
+The spec tree is published as **`tickerforge-spec-data`** on both registries:
+
+| Registry | Package | Install |
+|----------|---------|---------|
+| PyPI | [`tickerforge-spec-data`](https://pypi.org/project/tickerforge-spec-data/) | `pip install tickerforge-spec-data` |
+| crates.io | [`tickerforge-spec-data`](https://crates.io/crates/tickerforge-spec-data) | `cargo add tickerforge-spec-data` |
+
+Language implementations (`tickerforge`, `tickerforge-rs`) depend on this package at runtime; you normally do not install it directly unless overriding the bundled spec.
 
 ---
 
@@ -257,6 +270,10 @@ Both the Python and Rust implementations support **smart parsing**: you can pass
 
 See [`tickerforge-py`](https://github.com/mesias/tickerforge-py) and [`tickerforge-rs`](https://github.com/mesias/tickerforge-rs) READMEs for language-specific examples.
 
+## Offset tag `SYMBOL[n]`
+
+Both implementations also support an **offset tag** for futures: a root symbol with a bracketed integer (e.g. `DOL[1]`, `WIN[2]`, `IND[-1]`) that resolves to the nth contract in the tradeable-contract list — forward, the front month (`0`), or backward into already-expired contracts (negative `n`). It works for every futures contract automatically and requires no YAML or schema changes. See [`docs/offset-tag.md`](docs/offset-tag.md) for the full convention.
+
 ---
 
 # Versioning and Releases
@@ -273,7 +290,7 @@ Release sequence:
 1. Update **`VERSION`**, then run **`python scripts/sync_cargo_version.py`**
 2. Run **`python scripts/check_versions.py`**
 3. Commit and tag `vX.Y.Z`
-4. GitHub Actions `release.yml` publishes the Python wheel/sdist to PyPI (spec files are bundled at build time; there is no duplicate `spec/` copy in git)
+4. GitHub Actions `release.yml` publishes **`tickerforge-spec-data`** to [PyPI](https://pypi.org/project/tickerforge-spec-data/) and [crates.io](https://crates.io/crates/tickerforge-spec-data) (spec files are bundled at build time; there is no duplicate `spec/` copy in git)
 
 ---
 
