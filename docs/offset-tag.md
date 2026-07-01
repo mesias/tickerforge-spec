@@ -10,10 +10,13 @@ The tag selects the *nth* contract from the tradeable-contract list for that roo
 
 ```
 ROOT[n]
+ROOT[n@roll]
+ROOT[@roll]
 ```
 
 - `ROOT` — a futures root symbol defined in `spec/contracts/<exchange>/futures.yaml` (e.g. `DOL`, `WIN`, `IND`, `WDO`, `DI1`, `BGI`).
-- `n` — a signed integer offset. May be omitted entirely (plain `ROOT` is equivalent to `ROOT[0]`).
+- `n` — a signed integer offset. May be omitted entirely (plain `ROOT` is equivalent to `ROOT[0]`). If `@roll` is present and `n` is omitted, it defaults to `1` (the next contract).
+- `@roll` — an optional condition tag indicating that the symbol is only valid on the last trading day of the expiring contract.
 
 ## Semantics
 
@@ -28,6 +31,33 @@ ROOT[n]
 | `ROOT[-2]` | The second most-recently-expired contract. |
 
 `n = 0` and the plain root produce identical results. Out-of-range indices (e.g. `DOL[999]`, `DOL[-999]`) and unknown roots (e.g. `ZZZ[1]`) raise a `ValueError` (Python) or return an `Err` (Rust).
+
+## Conditional Roll-Day Exception (`@roll`)
+
+The `@roll` condition limits the parsing of the tag strictly to the **last trading day** (roll day) of the expiring front contract. On any other day, the notation is invalid and raises a parsing error.
+
+- `SYMBOL[@roll]` / `SYMBOL[1@roll]` — next contract, valid only on the last trading day of the expiring contract.
+- `SYMBOL[0@roll]` — current expiring contract, valid only on the last trading day.
+
+### Roll Day Definitions
+The roll day is computed dynamically based on the contract's expiration rules:
+- **Currency Futures (DOL, WDO)**: These contracts roll off on their expiration day (the first business day of the contract month). The last trading day is therefore **1 business day before expiration**.
+- **Index Futures (WIN, IND)**: These contracts remain tradeable through the expiration day. The last trading day is therefore **the expiration day itself**.
+
+### Examples (DOL, around June/July 2026)
+* **June 30, 2026** (Roll Day of July contract `DOLN26`):
+  - `DOL[@roll]` resolves to `DOLQ26` (August contract)
+  - `DOL[0@roll]` resolves to `DOLN26` (July contract)
+* **June 29, 2026** (Non-Roll Day):
+  - `DOL[@roll]` raises a `ValueError` / `Err`
+  - `DOL[0@roll]` raises a `ValueError` / `Err`
+
+## The `is_valid` flag
+Parsed futures ticker objects contain a boolean flag (`is_valid`) indicating whether the parsed contract is currently tradeable/active in the market on the reference date.
+- It is `true` if the contract has not yet expired (e.g., `DOLQ26` on July 1st, 2026).
+- It is `false` if the contract has already expired (e.g., `DOLQ24` on July 1st, 2026).
+- It is `null`/`None` if no reference date context is provided.
+
 
 ### Forward list (n >= 0)
 
