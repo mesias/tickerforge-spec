@@ -57,20 +57,28 @@ expiration_rules:
     type: nearest_weekday_to_day
     weekday: wednesday
     day: 15
+    last_trading_day: same_day
+    roll_on_last_trading_day: false
   first_business_day:
-    description: First trading day of the month
+    description: First trading day of the month; last trading session is the prior business day
     type: first_business_day
+    last_trading_day: prior_business_day
+    roll_on_last_trading_day: true
   third_friday:
     description: Third Friday of the month (common in US options)
     type: nth_weekday_of_month
     weekday: friday
     n: 3
+    last_trading_day: same_day
+    roll_on_last_trading_day: false
     tags:
       - options
       - US
   last_business_day:
     description: Last trading day of the month
     type: last_business_day
+    last_trading_day: same_day
+    roll_on_last_trading_day: false
   fifth_business_day:
     description: Fifth trading day of the month
     type: nth_business_day

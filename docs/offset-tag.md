@@ -63,8 +63,8 @@ Parsed futures ticker objects contain a boolean flag (`is_valid`) indicating whe
 
 The forward list is the set of `(year, month)` pairs from `as_of.year .. as_of.year + 4` whose contract is **still tradeable** on the reference date, ordered ascending. `n` indexes this list. "Still tradeable" follows the contract's existing expiration rule:
 
-- `DOL` / `WDO` are tradeable while `as_of < expiration`.
-- Other contracts (e.g. `WIN`, `IND`, `DI1`) are tradeable while `as_of <= expiration`.
+- `first_business_day` contracts (`DOL`, `WDO`, `DI1`) roll off on their last trading day (1 business day before expiration), so they are front-month eligible while `as_of < last_trading_day`.
+- Other contracts (e.g. `WIN`, `IND`) remain tradeable through expiry day (`as_of <= expiration`).
 
 ### Expired list (n < 0)
 

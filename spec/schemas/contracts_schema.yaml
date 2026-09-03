@@ -88,6 +88,18 @@ properties:
             description:
               type: string
               description: Human-readable note for schedule-type rules.
+            last_trading_day:
+              type: string
+              enum:
+                - same_day
+                - prior_business_day
+              description: When trading in the expiring contract ceases.
+            last_trading_day_offset:
+              type: integer
+              description: Business day offset for the last trading day relative to expiration (e.g. -1 for prior business day).
+            roll_on_last_trading_day:
+              type: boolean
+              description: Whether front-month rollover occurs on the last trading day.
           additionalProperties: false
       additionalProperties: false
 additionalProperties: false
